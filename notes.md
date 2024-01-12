@@ -11,5 +11,5 @@ css - style
 javascript - interaction
 service - web service endpoints
 database/login - persisted app and auth data
-websocket - data pushed from server, chat
+websocket - data pushed from server, chat: shows on simon who starts the game and when they finish
 react - web framework
