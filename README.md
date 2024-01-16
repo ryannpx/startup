@@ -7,9 +7,14 @@ This is my startup web application for cs 260!
 ![Login](https://github.com/ryannpx/startup/blob/main/IMG_0472.jpg?raw=true)
 ![Home](https://github.com/ryannpx/startup/blob/main/IMG_0473.jpg?raw=true)
 
-
-
 ### Key Features
+- Pomodero Timer
+- Join notifications
+- Motivational cat
+- Difference themes and colors
+- To do list
+- Music
+- Uplifting messages
 
 
 Heres the link to my notes: [Here!](notes.md)
