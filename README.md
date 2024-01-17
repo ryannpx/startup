@@ -8,13 +8,23 @@ This is my startup web application for cs 260!
 ![Home](https://github.com/ryannpx/startup/blob/main/IMG_0473.jpg?raw=true)
 
 ### Key Features
-- Pomodero Timer
+- Pomodero Timer 
 - Join notifications
 - Motivational cat
 - Difference themes and colors
 - To do list
 - Music
 - Uplifting messages
+
+### Technologies
+Here's how I will be using the following technologies:
+- HTML: Two HTML pages, one for log in, one for the main page. Size of Youtube video. To do list
+- CSS: Styling for the website, colors and styling of text, white space, timers, to do list
+- JavaScript: Create the countdown timer, to do list. Dynamics on To do list, clicking on cat to change the message
+- Service: Save the data of the accounts timers, time of video
+- DG/Login/Authentication: user authentication for peoples accounts, 
+- Websocket: Notifs when people join, finish sessions, chat sessions
+- React: deploy onto react website 
 
 
 Heres the link to my notes: [Here!](notes.md)
