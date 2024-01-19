@@ -22,3 +22,7 @@ startup specification
     - 30 seconds, casual, opportunity, value, tease
 - visual sketch/ representation
 - has to have something in it that uses all the technologies mentioned above
+
+1/19
+-tech stack
+    - react over server: caddy, over node js, over mongoDB(database)
