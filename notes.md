@@ -26,3 +26,10 @@ startup specification
 1/19
 -tech stack
     - react over server: caddy, over node js, over mongoDB(database)
+
+
+
+### KEYS!!!!
+- my ip server 44.217.189.226
+- website url http://44.217.189.226/
+- remote shell into ubuntu server: ssh -i /Users/ryann/[keypairdestination including keypair] ubuntu@44.217.189.226
