@@ -27,6 +27,7 @@ startup specification
 -tech stack
     - react over server: caddy, over node js, over mongoDB(database)
 
+1/22
 
 
 ### KEYS!!!!
