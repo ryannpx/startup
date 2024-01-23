@@ -28,6 +28,13 @@ startup specification
     - react over server: caddy, over node js, over mongoDB(database)
 
 1/22
+- secure website
+- 
+
+
+
+
+
 
 
 ### KEYS!!!!
