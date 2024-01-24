@@ -29,7 +29,36 @@ startup specification
 
 1/22
 - secure website
-- 
+
+1/24
+~ commands ~
+- echo - Output the parameters of the command
+- cd - Change directory
+- mkdir - Make directory
+- rmdir - Remove directory
+- rm - Remove file(s)
+- mv - Move file(s)
+- cp - Copy files
+- ls - List files
+- curl - Command line client URL browser
+- grep - Regular expression search
+- find - Find files
+- top - View running processes
+- df - View disk statistics
+- cat - Output file
+- less - Interactive file output
+- wc - Count words
+- ps - View processes
+- kill - Kill a process
+- sudo - Execute as admin
+- ssh - Remote shell
+- scp - Securely copy files to a remote computer
+- history - Show history of commands
+- ping - Test connection
+- tracert - Trace network
+- dig - DNS information
+- man - Look in the manual
+
 
 
 
