@@ -60,6 +60,25 @@ startup specification
 - man - Look in the manual
 
 
+1/26
+index.html can open in the browser (made one in the aws folder)
+
+elements and tags:
+-  starts with doctype
+- language
+- head
+- first html or title
+- head
+
+- body 
+- hello world
+- body
+
+html
+
+
+
+
 
 
 
