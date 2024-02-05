@@ -30,8 +30,8 @@ Here's how I will be using the following technologies:
 Heres the link to my notes: [Here!](notes.md)
 
 
-## HTML Deliverable
-# For this deliverable I built out the structure of my application using HTML.
+# HTML Deliverable
+For this deliverable I built out the structure of my application using HTML.
 - started with an index.hmtl, which will be my login page
 - the page includes a color theme picker which may be removed, some info, a cat picture that i need to draw and update, and a login
 - login button takes you to home.html
