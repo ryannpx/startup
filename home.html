@@ -53,15 +53,33 @@
       <img src="sample_cat.jpg" alt="cat image for login screen" width = 100>
       <p>click for study motivation!</p>
       </div>
-      <p>Login to play</p>
-      
+
+      <h2>To-Do List</h2>
+
+  <form id="todo-form">
+    <label for="task">Add Task:</label>
+    <input type="text" id="task" name="task" required>
+    <button type="button" onclick="addTask()">Add</button>
+  </form>
+
+  <ul id="todo-list"style="list-style-type: none;">
+
+    <li>
+      <input type="checkbox" id="task1" name="task1">
+      <label for="task1">Sample Task 1</label>
+    </li>
+    <li>
+      <input type="checkbox" id="task2" name="task2">
+      <label for="task2">Sample Task 2</label>
+    </li>
+
+
+
+  </ul>
     </main>
 
     <footer>
-      <hr />
-      <span class="text-reset">Author Name(s)</span>
-      <br />
-      <a href="https://github.com/webprogramming260/simon-html">GitHub</a>
+        <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
     </footer>
   </body>
 </html>
