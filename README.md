@@ -36,7 +36,7 @@ For this deliverable I built out the structure of my application using HTML.
 - the page includes a color theme picker which may be removed, some info, a cat picture that i need to draw and update, and a login
 - login button takes you to home.html
 - home.html has a navbar to reload the page for home or to the login page
-- added the color picker in, might make presents so i can custom make the themes
+- added the color picker in, when you change color it changes the background color, might make presents so i can custom make the themes
 - websocket connection placeholder, tells people when they study and finish, as well as a placeholder for a chat
 - made the html for the countdown clock, going to implement functionality with js
 - start and pause buttons
