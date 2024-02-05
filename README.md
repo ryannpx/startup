@@ -45,10 +45,10 @@ For this deliverable I built out the structure of my application using HTML.
 - added a to do list, so far with just an add box and check boxes
 - added info page for information about the pomodoro timer
 
-HTML pages - 3 HTML pages
-Links - The login page automatically links to the home pagee. The home page has links to login and info.
-Text - Text for descriptions.
-Images - Embedded youtube playlist and cat images
-DB/Login - Input box and submit button for login. 
-WebSocket - Logins showing in real time to others and a live chat
+- HTML pages - 3 HTML pages
+- Links - The login page automatically links to the home pagee. The home page has links to login and info.
+- Text - Text for descriptions.
+- Images - Embedded youtube playlist and cat images
+- DB/Login - Input box and submit button for login. 
+- WebSocket - Logins showing in real time to others and a live chat
 
