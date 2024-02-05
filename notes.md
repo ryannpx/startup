@@ -90,3 +90,7 @@ html
 - my ip server 44.217.189.226
 - website url http://44.217.189.226/
 - remote shell into ubuntu server: ssh -i /Users/ryann/[keypairdestination including keypair] ubuntu@44.217.189.226
+
+### how to deploy
+nav to startup 
+./deployFiles.sh -k /Users/ryann/Desktop/260/260keypair/cs260startup.pem -h porostudy.com -s startup
