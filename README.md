@@ -43,5 +43,5 @@ For this deliverable I built out the structure of my application using HTML.
 - added an imbedded youtube playlist, will update later to make it better
 - another cat that can be clicked to say different sayings, will update later
 - added a to do list, so far with just an add box and check boxes
-
+- added info page for information about the pomodoro timer
 
