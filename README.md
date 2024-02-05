@@ -30,4 +30,18 @@ Here's how I will be using the following technologies:
 Heres the link to my notes: [Here!](notes.md)
 
 
+##HTML Deliverable
+#For this deliverable I built out the structure of my application using HTML.
+- started with an index.hmtl, which will be my login page
+- the page includes a color theme picker which may be removed, some info, a cat picture that i need to draw and update, and a login
+- login button takes you to home.html
+- home.html has a navbar to reload the page for home or to the login page
+- added the color picker in, might make presents so i can custom make the themes
+- websocket connection placeholder, tells people when they study and finish, as well as a placeholder for a chat
+- made the html for the countdown clock, going to implement functionality with js
+- start and pause buttons
+- added an imbedded youtube playlist, will update later to make it better
+- another cat that can be clicked to say different sayings, will update later
+- added a to do list, so far with just an add box and check boxes
+
 
