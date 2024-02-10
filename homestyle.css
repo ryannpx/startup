@@ -1,0 +1,48 @@
+/* styling.css */
+
+/* Custom styles for header and footer */
+header, footer {
+    background-color: #f5f5f5;
+    padding: 1rem;
+}
+
+/* Style for the logo in the header */
+#navbar-logo {
+    margin-right: 1rem;
+}
+
+/* Center content in the footer */
+footer .content {
+    display: flex;
+    justify-content: center;
+}
+
+/* Style for the navigation links */
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header nav ul li a:hover {
+    color: #3273dc;
+}
+
+/* homestyle.css */
+
+.theme-selector {
+    position: fixed;
+    top: 60px; /* Adjust as needed to align with your header */
+    right: 20px; /* Adjust as needed to align with the right side of the screen */
+  }
+  

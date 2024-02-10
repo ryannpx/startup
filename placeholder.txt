@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poro Study! </title>
+    <!-- lets put a logo here ^^ -->
+    
+
+    <style>
+      body {
+        transition: background-color 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <label for="themeselector">Choose a color theme! </label>
+      <input type="color" name="varColor" id="color" value="#FF0000" onchange="changeTheme()" />
+    </p>
+  
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <!-- <h1>Pomo Study!<sup>&reg;</sup></h1> -->
+      <div >
+        <img src="1 (1).png" alt="cat image for login screen" width = 200>
+    </div>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+          <ul>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="info.html">Info</a></li>
+        </ul>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <div id="websocket-placeholder">
+        <p>WebSocket Connection Placeholder</p>
+        <p>Ryann has started a study session!</p>
+        <p>Elise finished a study session!</p>
+        <p>Ryann: Good job elise! :3</p>
+
+        <button onclick="startWebSocket()">Chat</button>
+      </div>
+      <div class="countdown" id="countdown">
+        <p>This is going to be a countdown clock</p>
+        <div id="days">00</div>
+        <div id="hours">00</div>
+        <div id="minutes">00</div>
+        <div id="seconds">00</div>
+        <button style="margin-left: 75px;" type="start!">Start!</button>
+        <button style="margin-left: 75px;" type="pause">Pause</button>
+      </div>
+      <h2>My YouTube Playlist</h2>
+      <p>Select a video from the playlist for relaxing music</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=h9SEVYGSh5N8hPiI&amp;list=PL_vfmqrfdQpqztjpAr8tiav5gT1QowC2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+      <div>
+      <img src="sample_cat.jpg" alt="cat image for login screen" width = 100>
+      <p>you can do it!</p>
+      <p>click cat for study motivation!</p>
+     
+      </div>
+
+      <h2>To-Do List</h2>
+
+  <form id="todo-form">
+    <label for="task">Add Task:</label>
+    <input type="text" id="task" name="task" required>
+    <button type="button" onclick="addTask()">Add</button>
+  </form>
+
+  <ul id="todo-list"style="list-style-type: none;">
+
+    <li>
+      <input type="checkbox" id="task1" name="task1">
+      <label for="task1">Sample Task 1</label>
+    </li>
+    <li>
+      <input type="checkbox" id="task2" name="task2">
+      <label for="task2">Sample Task 2</label>
+    </li>
+  </ul>
+    </main>
+    <script>
+      function changeTheme() {
+        const colorPicker = document.getElementById("color");
+        document.body.style.backgroundColor = colorPicker.value;
+      }
+    </script>
+    <footer>
+        <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
+    </footer>
+  </body>
+</html>
