@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <!-- Link to custom CSS file if needed -->
     <!-- <link rel="stylesheet" href="styling.css"> -->
+    <style>
+        /* Custom styles */
+        .login-container {
+            background-color: #f5f5f5; /* Lighter background color */
+            padding: 20px; /* Add some padding for spacing */
+        }
+    </style>
 </head>
 <body>
 
@@ -31,32 +38,36 @@
     <div class="container">
         <div class="columns is-centered">
             <div class="column is-half">
-                <div class="image-container has-text-centered">
-                    <img src="1 (1).png" alt="cat image for login screen" width="200">
-                </div>
+                <!-- Added custom styling for the login container -->
+                <div class="login-container box">
+                    <div class="image-container has-text-centered">
+                        <img src="1 (1).png" alt="cat image for login screen" width="150">
+                    </div>
 
-                <div class="login-container">
-                    <p class="subtitle">Ready to start studying? Please login below:</p>
-
-                    <form action="home.html">
-                        <div class="field">
-                            <label for="username" class="label">Username:</label>
-                            <div class="control">
-                                <input type="text" id="username" name="username" class="input" required>
+                    <div class="has-text-centered"> <!-- Added has-text-centered class -->
+                        <p class="subtitle">Ready to start studying? Please login below:</p>
+                        
+                        <form action="home.html">
+                            <!-- Your login form -->
+                            <div class="field">
+                                <label for="username" class="label">Username:</label>
+                                <div class="control">
+                                    <input type="text" id="username" name="username" class="input" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="field">
-                            <label for="password" class="label">Password:</label>
-                            <div class="control">
-                                <input type="password" id="password" name="password" class="input" required>
+                            <div class="field">
+                                <label for="password" class="label">Password:</label>
+                                <div class="control">
+                                    <input type="password" id="password" name="password" class="input" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <button type="submit" class="button is-primary">Login</button>
+                            <div class="field">
+                                <div class="control">
+                                    <button type="submit" class="button is-primary">Login</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

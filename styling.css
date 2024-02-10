@@ -1,52 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <!-- link to bulma and css styliing-->
+    <!-- Link to Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="styling.css">
-    <nav>
-        <ul>
-            <li><a href="index.html">Login</a></li>
-            <li><a href="home.html">Home</a></li>
-        </ul>
-    </nav>
-    <li>
-        <label for="themeselector">Choose a color theme! </label>
-        <input type="color" name="varColor" id="color" value="#FF0000" />
-      </li>
+    <!-- Link to custom CSS file if needed -->
+    <!-- <link rel="stylesheet" href="styling.css"> -->
 </head>
-<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0;">
-    <div >
-        <img src="1 (1).png" alt="cat image for login screen" width = 200>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a href="index.html" class="navbar-item">Login</a>
+            <a href="home.html" class="navbar-item">Home</a>
+        </div>
     </div>
-    <!-- <h1>Poro Study</h1>
-    <p>Pomodoro Timer</p> -->
-    <p>Ready to start studying? Please login below:</p>
+</nav>
 
-    
+<section class="section">
+    <div class="container">
+        <label for="themeselector">Choose a color theme!</label>
+        <input type="color" name="varColor" id="color" value="#FF0000">
+    </div>
+</section>
 
-    <form action="home.html">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-    <a href="home.html">
-        <button style="margin-left: 75px;" type="submit">Login</button>
-    </a>
-    </form>
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <div class="image-container has-text-centered">
+                    <img src="1 (1).png" alt="cat image for login screen" width="150">
+                </div>
 
-<footer>
-    <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
+                <div class="login-container">
+                    <p class="subtitle">Ready to start studying? Please login below:</p>
+
+                    <form action="home.html">
+                        <div class="field">
+                            <label for="username" class="label">Username:</label>
+                            <div class="control">
+                                <input type="text" id="username" name="username" class="input" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="password" class="label">Password:</label>
+                            <div class="control">
+                                <input type="password" id="password" name="password" class="input" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-primary">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
+    </div>
 </footer>
 
 </body>
 </html>
-
-<!--include pomodoro timer ADD A FOOTER PLSSSSS, and a link from login to the next page, fix my elements and my styling (move it to the left, in the head, add themeselector)-->
-
