@@ -1,5 +1,5 @@
 .custom-button {
-    background-color: #6697be; /* Custom background color */
+    background-color: #6697be !important; /* Custom background color */
     color: #ffffff; /* Text color */
     border-color: #6697be; /* Border color */
 }
@@ -7,4 +7,9 @@
 .custom-button:hover {
     background-color: #266089; /* Change background color on hover */
     border-color: #5a6268; /* Change border color on hover */
+}
+/* Custom styles */
+.custom-box {
+    background-color: #ff9ff3 !important; /* Custom pink background color */
+    border-color: #ff9ff3; /* Border color (same as background to hide the border) */
 }
