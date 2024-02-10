@@ -13,3 +13,10 @@
     background-color: #ff9ff3 !important; /* Custom pink background color */
     border-color: #ff9ff3; /* Border color (same as background to hide the border) */
 }
+
+
+/* Custom styles for the navbar logo */
+#navbar-logo {
+    max-width: none; /* Remove the maximum width constraint */
+    height: auto; /* Ensure the height adjusts according to the width */
+}
