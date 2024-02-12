@@ -21,3 +21,16 @@
     max-width: none; /* Remove the maximum width constraint */
     height: auto; /* Ensure the height adjusts according to the width */
 }
+
+/* Custom styles for the background */
+body {
+    background-color: #e3d7d58b; /* Cream background color */
+}
+
+/* Custom styles for the login box */
+.login-container {
+    background-color: #faf6f6d1 !important; /* Brown background color */
+    color: white; /* Text color */
+    border-color: #8b4513; /* Border color */
+}
+
