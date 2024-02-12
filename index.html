@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light custom-header" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="#">
             <img id="navbar-logo" src="pomo study.png" >
@@ -53,21 +53,23 @@
                     <div class="has-text-centered"> <!-- Added has-text-centered class -->
                         <p class="subtitle">Ready to start studying? Please login below:</p>
                         
-                        <form action="home.html">
+                        <form action="home.html" class="login-form">
                             <!-- Your login form -->
                             <div class="field">
                                 <label for="username" class="label">Username:</label>
                                 <div class="control">
-                                    <input type="text" id="username" name="username" class="input" required>
+                                    <input type="text" id="username" name="username" class="input" style="text-align: left;" required>
+                                    <!-- Inline style applied to align text to left -->
                                 </div>
                             </div>
                             <div class="field">
                                 <label for="password" class="label">Password:</label>
                                 <div class="control">
-                                    <input type="password" id="password" name="password" class="input" required>
+                                    <input type="password" id="password" name="password" class="input" style="text-align: left;" required>
+                                    <!-- Inline style applied to align text to left -->
                                 </div>
                             </div>
-                            <div class="field">
+                            <div class="field is-grouped is-grouped-centered">
                                 <div class="control">
                                     <button type="submit" class="button custom-button">Login</button>
                                     <!-- Added custom-button class for custom styling -->
@@ -81,7 +83,8 @@
     </div>
 </section>
 
-<footer class="footer">
+
+<footer class="footer custom-footer">
     <div class="content has-text-centered">
         <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
     </div>

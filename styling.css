@@ -24,13 +24,30 @@
 
 /* Custom styles for the background */
 body {
-    background-color: #e3d7d58b; /* Cream background color */
+    background-color: #fcfcfc; /* Cream background color */
 }
 
 /* Custom styles for the login box */
 .login-container {
-    background-color: #faf6f6d1 !important; /* Brown background color */
+    background-color: #faf6f6d1 !important; /* Brown background color faf6f6d1 */
     color: white; /* Text color */
     border-color: #8b4513; /* Border color */
 }
+
+
+.login-form .field .control {
+    text-align: left !important;
+}
+
+
+/* Custom styles for the header */
+.custom-header {
+    background-color: #d0c2be29 !important; /* Cream background color */
+}
+
+/* Custom styles for the footer */
+.custom-footer {
+    background-color: #d0c2be29 !important; /* Cream background color */
+}
+
 
