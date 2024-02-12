@@ -1,13 +1,14 @@
 .custom-button {
-    background-color: #6697be !important; /* Custom background color */
-    color: #ffffff; /* Text color */
-    border-color: #6697be; /* Border color */
+    background-color: #ff94a9c9 !important; /* Custom background color */
+    color: #424242; /* Text color */
+    border-color: #ff94a9c9; /* Border color */
 }
 
 .custom-button:hover {
-    background-color: #266089; /* Change background color on hover */
-    border-color: #5a6268; /* Change border color on hover */
+    background-color: #ff94a9 !important; /* Change background color on hover */
+    border-color: #fafbfc !important; /* Change border color on hover */
 }
+
 /* Custom styles */
 .custom-box {
     background-color: #ff9ff3 !important; /* Custom pink background color */
