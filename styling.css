@@ -22,10 +22,24 @@
     height: auto; /* Ensure the height adjusts according to the width */
 }
 
-/* Custom styles for the background */
-body {
-    background-color: #fcfcfc; /* Cream background color */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
+
+body {
+    background-image: linear-gradient(to right, #ff94a9c9, #faf6f6d1);
+    background-size: 200% auto;
+    animation: gradientAnimation 10s ease infinite;
+}
+
 
 /* Custom styles for the login box */
 .login-container {
@@ -35,6 +49,7 @@ body {
 }
 
 
+
 .login-form .field .control {
     text-align: left !important;
 }
@@ -42,12 +57,12 @@ body {
 
 /* Custom styles for the header */
 .custom-header {
-    background-color: #d0c2be29 !important; /* Cream background color */
+    background-color: #d0c2be76 !important; /* Cream background color */
 }
 
 /* Custom styles for the footer */
 .custom-footer {
-    background-color: #d0c2be29 !important; /* Cream background color */
+    background-color: #d0c2be76 !important; /* Cream background color */
 }
 
 
