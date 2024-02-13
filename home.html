@@ -10,54 +10,55 @@
     <!-- Link to custom CSS file -->
     <link rel="stylesheet" href="homestyle.css">
 
-    <style>
-      body {
-        transition: background-color 0.5s ease-in-out;
-      }
-
-      /* Styling for the digital clock */
-      .digital-clock {
-        border: 2px solid #ccc; /* Border around the clock */
-        padding: 10px;
-        width: 200px;
-        margin-left: auto; /* Move clock to the right */
-        margin-right: 20px;
-        text-align: center;
-        font-size: 24px; /* Adjust font size */
-        font-family: monospace; /* Use monospace font for digital appearance */
-        border-radius: 5px; /* Rounded corners */
-        background-color: #f9f9f9; /* Background color */
-      }
-    </style>
+   
 </head>
 <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
-    <header>
-        <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <img id="navbar-logo" src="pomo study.png" alt="cat image for login screen" >
-                </a>
 
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+    <nav class="navbar is-light custom-header" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <img id="navbar-logo" src="pomo study.png" >
+            </a>
+            
+    
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="index.html" class="navbar-item">Login</a>
+                <a href="home.html" class="navbar-item">Home</a>
+                <a href="info.html" class="navbar-item">Info</a>
             </div>
-
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a href="index.html" class="navbar-item">Login</a>
-                    <a href="home.html" class="navbar-item">Home</a>
-                    <a href="info.html" class="navbar-item">Info</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
+        </div>
+    </nav>
+    
     <main>
         <!-- Your main content here -->
+        <style>
+            body {
+              transition: background-color 0.5s ease-in-out;
+            }
+      
+            /* Styling for the digital clock */
+            .digital-clock {
+              border: 2px solid #ccc; /* Border around the clock */
+              padding: 10px;
+              width: 200px;
+              margin-left: auto; /* Move clock to the right */
+              margin-right: 20px;
+              text-align: center;
+              font-size: 24px; /* Adjust font size */
+              font-family: monospace; /* Use monospace font for digital appearance */
+              border-radius: 5px; /* Rounded corners */
+              background-color: #f9f9f9; /* Background color */
+            }
+          </style>
         <div id="websocket-placeholder">
             <p>WebSocket Connection Placeholder</p>
             <p>Ryann has started a study session!</p>
@@ -106,7 +107,7 @@
         </ul>
     </main>
 
-    <footer class="footer">
+    <footer class="footer custom-footer">
         <div class="content has-text-centered">
             <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
         </div>
