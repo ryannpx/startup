@@ -16,6 +16,7 @@
         <a class="navbar-item" href="#">
             <img id="navbar-logo" src="pomo study.png" >
         </a>
+        
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -32,34 +33,46 @@
     </div>
 </nav>
 
+<!-- <section class="section">
+    <div class="container">
+        <label for="themeselector">Choose a color theme!</label>
+        <input type="color" name="varColor" id="color" value="#FF0000">
+    </div>
+</section> -->
+
 <section class="section">
     <div class="container">
         <div class="columns is-centered">
             <div class="column is-half">
+                <!-- Added custom styling for the login container -->
                 <div class="login-container box">
                     <div class="image-container has-text-centered">
                         <img src="1 (1).png" alt="cat image for login screen" width="200">
                     </div>
 
-                    <div class="has-text-centered">
+                    <div class="has-text-centered"> <!-- Added has-text-centered class -->
                         <p class="subtitle">Ready to start studying? Please login below:</p>
                         
                         <form action="home.html" class="login-form">
+                            <!-- Your login form -->
                             <div class="field">
                                 <label for="username" class="label">Username:</label>
                                 <div class="control">
                                     <input type="text" id="username" name="username" class="input" style="text-align: left;" required>
+                                    <!-- Inline style applied to align text to left -->
                                 </div>
                             </div>
                             <div class="field">
                                 <label for="password" class="label">Password:</label>
                                 <div class="control">
                                     <input type="password" id="password" name="password" class="input" style="text-align: left;" required>
+                                    <!-- Inline style applied to align text to left -->
                                 </div>
                             </div>
                             <div class="field is-grouped is-grouped-centered">
                                 <div class="control">
                                     <button type="submit" class="button custom-button">Login</button>
+                                    <!-- Added custom-button class for custom styling -->
                                 </div>
                             </div>
                         </form>
@@ -69,6 +82,7 @@
         </div>
     </div>
 </section>
+
 
 <footer class="footer custom-footer">
     <div class="content has-text-centered">
