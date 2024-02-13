@@ -54,7 +54,16 @@ body {
     background-color: #ff94a9 !important; /* Change background color on hover */
     border-color: #fafbfc !important; /* Change border color on hover */
 }
+.chat-button {
+    background-color: #58afb2 !important; /* Custom background color */
+    color: #424242; /* Text color */
+    border-color: #58afb2; /* Border color */
+}
 
+.chat-button:hover {
+    background-color: #58afb2a5!important; /* Change background color on hover */
+    border-color: #fafbfc !important; /* Change border color on hover */
+}
 
 .custom-container .countdown {
     background-color: #faf6f6d1 !important; /* Brown background color */
@@ -67,4 +76,49 @@ body {
     background-color: #faf6f66e !important; /* Cream background color */
     height: 10vh
     
+}
+
+.digital-clock {
+    border: 2px solid #ccc; /* Border around the clock */
+    padding: 20px;
+    width: 300px; /* Increase width */
+    margin: 20px auto; /* Center the clock */
+    text-align: center;
+    font-size: 48px; /* Increase font size */
+    font-family: monospace; /* Use monospace font for digital appearance */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9; /* Background color */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
+    float: right; /* Float the clock to the right */
+    margin-right: 20px; /* Add right margin */
+    margin-top: 20px; /* Add top margin */
+}
+
+
+.websocket-container {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-right: 20px; /* Add right margin */
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.websocket-placeholder {
+    
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    background-color: #f9f9f938;
+    margin-bottom: 20px;
+}
+
+.websocket-placeholder p {
+    margin-bottom: 10px;
+}
+
+.websocket-placeholder .field.is-grouped {
+    margin-top: auto;
 }
