@@ -170,3 +170,12 @@
     <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
 </footer>
 </html>
+
+
+
+.custom-footer {
+    background-color: #faf6f6 !important; /* Cream background color */
+    
+    width: 100%;
+    height: 30px !important; /* Height of the footer */
+}

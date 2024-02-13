@@ -3,18 +3,11 @@
     background-color: #faf6f66e !important; /* Cream background color */
 }
 
-/* Custom styles for the footer */
-.custom-footer {
-    background-color: #faf6f6 !important; /* Cream background color */
-    position: fixed; /* Change to fixed */
-    bottom: 0;
-    width: 100%;
-    height: 30px !important; /* Height of the footer */
-}
+
 
 .section {
-    margin-bottom: 50px !important; /* Height of the footer */
-    padding-bottom: 20px; /* Add some padding at the bottom to create space between content and footer */
+    margin-bottom: 10px !important; /* Height of the footer */
+     /* Add some padding at the bottom to create space between content and footer */
 }
 
 /* Additional styles as needed */
@@ -52,7 +45,7 @@ html {
 }
 body {
     margin: 0;
-    padding-bottom: 100px; /* Height of the footer */
+   
     background-image: linear-gradient(to right, #ff94a9c9, #faf6f6d1);
     background-size: 200% auto;
     animation: gradientAnimation 10s ease infinite;
@@ -65,4 +58,13 @@ body {
     width: 1500px; /* Adjusted width */
     max-width: 100%; /* Maximum width */
     margin: 0 auto; /* Center horizontally */
+}
+
+
+
+/* Custom styles for the footer */
+.custom-footer {
+    background-color: #faf6f66e !important; /* Cream background color */
+    height: 10vh
+    
 }
