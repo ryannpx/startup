@@ -70,30 +70,34 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=h9SEVYGSh5N8hPiI&amp;list=PL_vfmqrfdQpqztjpAr8tiav5gT1QowC2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     
         <div>
-            <img src="sample_cat.jpg" alt="cat image for login screen" width = 100>
+            <img src="Untitled_Artwork (2).png" alt="cat image for login screen" width = 100>
             <p>you can do it!</p>
             <p>click cat for study motivation!</p>
         </div>
 
         <h2>To-Do List</h2>
-
-        <form id="todo-form">
-            <label for="task">Add Task:</label>
-            <input type="text" id="task" name="task" required>
-            <button type="button" onclick="addTask()">Add</button>
-        </form>
-
-        <ul id="todo-list"style="list-style-type: none;">
-
-            <li>
-            <input type="checkbox" id="task1" name="task1">
-            <label for="task1">Sample Task 1</label>
-            </li>
-            <li>
-            <input type="checkbox" id="task2" name="task2">
-            <label for="task2">Sample Task 2</label>
-            </li>
-        </ul>
+        <div class="container todo-container">
+            <div id="todo-list class="todo-list">
+                <form id="todo-form">
+                    <label for="task">Add Task:</label>
+                    <input type="text" id="task" name="task" required>
+                    <button type="button" onclick="addTask()">Add</button>
+                </form>
+    
+                <ul id="todo-list"style="list-style-type: none;">
+    
+                    <li>
+                    <input type="checkbox" id="task1" name="task1">
+                    <label for="task1">Sample Task 1</label>
+                    </li>
+                    <li>
+                    <input type="checkbox" id="task2" name="task2">
+                    <label for="task2">Sample Task 2</label>
+                    </li>
+                </ul>
+    
+            </div>
+        </div>
     </main>
 
     <footer class="footer custom-footer">
