@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <!-- Link to custom CSS file -->
     <link rel="stylesheet" href="homestyle.css">
-
    
 </head>
 <body>
@@ -40,42 +39,16 @@
     
     <main>
         <!-- Your main content here -->
-        <style>
-            body {
-              transition: background-color 0.5s ease-in-out;
-            }
-      
-            /* Styling for the digital clock */
-            .digital-clock {
-              border: 2px solid #ccc; /* Border around the clock */
-              padding: 10px;
-              width: 200px;
-              margin-left: auto; /* Move clock to the right */
-              margin-right: 20px;
-              text-align: center;
-              font-size: 24px; /* Adjust font size */
-              font-family: monospace; /* Use monospace font for digital appearance */
-              border-radius: 5px; /* Rounded corners */
-              background-color: #f9f9f9; /* Background color */
-            }
-          </style>
-        <div id="websocket-placeholder">
-            <p>WebSocket Connection Placeholder</p>
-            <p>Ryann has started a study session!</p>
-            <p>Elise finished a study session!</p>
-            <p>Ryann: Good job elise! :3</p>
+        <div class="container">
+            <div class="countdown digital-clock" id="countdown"> <!-- Apply digital-clock class to countdown -->
+                25:00
+                <div>
+                    <button id="startButton" class="button is-success" style="margin-top: 10px;">Start</button>
+                    <button id="pauseButton" class="button is-warning" style="margin-top: 10px;">Pause</button>
+                </div>
+            </div>
+        </div>
 
-            <button onclick="startWebSocket()">Chat</button>
-        </div>
-        <div class="countdown digital-clock" id="countdown"> <!-- Apply digital-clock class to countdown -->
-            <p>This is going to be a countdown clock</p>
-            <div id="days">00</div>
-            <div id="hours">00</div>
-            <div id="minutes">00</div>
-            <div id="seconds">00</div>
-            <button style="margin-left: 75px;" type="start!">Start!</button>
-            <button style="margin-left: 75px;" type="pause">Pause</button>
-        </div>
         <h2>My YouTube Playlist</h2>
         <p>Select a video from the playlist for relaxing music</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=h9SEVYGSh5N8hPiI&amp;list=PL_vfmqrfdQpqztjpAr8tiav5gT1QowC2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -112,5 +85,6 @@
             <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
         </div>
     </footer>
+
 </body>
 </html>

@@ -20,7 +20,20 @@ body {
 .custom-header {
     background-color: #faf6f66e !important; /* Cream background color */
 }
+.digital-clock {
+    border: 2px solid #ccc; /* Border around the clock */
+    padding: 20px;
+    width: 200px;
+    margin: 20px auto; /* Center the clock */
+    text-align: center;
+    font-size: 36px; /* Adjust font size */
+    font-family: monospace; /* Use monospace font for digital appearance */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9; /* Background color */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
+  }
 
+  
 
 .custom-footer {
     background-color: #faf6f66e !important; /* Cream background color */
