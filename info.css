@@ -57,3 +57,12 @@ body {
     background-size: 200% auto;
     animation: gradientAnimation 10s ease infinite;
 }
+
+.info-container {
+    background-color: #faf6f6d1 !important; /* Brown background color faf6f6d1 */
+    color: black; /* Text color */
+    border-color: #8b4513; /* Border color */
+    width: 1500px; /* Adjusted width */
+    max-width: 100%; /* Maximum width */
+    margin: 0 auto; /* Center horizontally */
+}
