@@ -1,0 +1,27 @@
+/* Custom styles for the header */
+.custom-header {
+    background-color: #faf6f66e !important; /* Cream background color */
+}
+
+/* Custom styles for the footer */
+.custom-footer {
+    background-color: #faf6f66e !important; /* Cream background color */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    background-image: linear-gradient(to right, #ff94a9c9, #faf6f6d1);
+    background-size: 200% auto;
+    animation: gradientAnimation 10s ease infinite;
+}

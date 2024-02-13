@@ -103,3 +103,70 @@
     </footer>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <h1>Pomo Study!<sup>&reg;</sup></h1> -->
+    <div >
+        <img src="1 (1).png" alt="cat image for login screen" width = 200>
+    </div>
+    <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+          <ul>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="info.html">Info</a></li>
+        </ul>
+      </nav>
+</head>
+<body>
+    <main>
+        <p>The Pomodoro timer is a time management technique developed by Francesco Cirillo in the late 1980s. 
+            The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. These intervals are known as "Pomodoros," the plural in English of the Italian word Pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as a university student.
+
+            The Pomodoro Technique involves the following steps:
+            
+           <p>- Choose a Task: Select a task you want to work on.</p> 
+            
+            <p>- Set the Timer: Set a timer for 25 minutes (one Pomodoro).</p>
+            
+            <p>- Work on the Task: Work on the selected task until the timer rings.</p>
+            
+            <p>- Take a Short Break: Take a short break (usually 5 minutes) to relax and recharge.</p>
+            
+            <p>- Repeat: Repeat the process. After completing four Pomodoros, take a longer break (15–30 minutes).</p>
+            
+            The idea behind the Pomodoro Technique is to increase productivity by breaking work into focused intervals, promoting a sense of urgency and reducing the likelihood of burnout. The short breaks between intervals help maintain concentration and prevent mental fatigue.
+        </p>
+
+        <p>Pomo Study is a website designed for your productivity to come to life! Equipped with relaxing music, a to-do list, and interactable pomodoro timer, and even
+            real time study updates from others to keep you motivated!
+        </p>
+
+
+
+
+
+
+    </main>
+</body>
+<footer>
+    <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
+</footer>
+</html>
