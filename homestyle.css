@@ -255,8 +255,11 @@ body {
     
     .custom-footer {
         background-color: #faf6f66e !important; /* Cream background color */
-        height: 10vh;
-        margin-top: 00px;
+    height: 10vh; /* Set a fixed height */
+    margin-top: auto; /* Push the footer to the bottom */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Cen
     }
     
     .websocket-container {
@@ -283,9 +286,11 @@ body {
     }
     
     .todo-container {
-        width: 100%; /* Full width */
-        margin: 20px auto; /* Center horizontally */
-        margin-top: 550px;
+       width: 100%; /* Full width */
+    margin: 20px auto; /* Center horizontally */
+    margin-top: 20px; /* Adjust the margin to create space between the to-do list and the footer */
+    margin-bottom: 100px; /* Add margin-bottom to prevent the footer from overlapping */
+    
     }
     
     .add-button {
@@ -302,6 +307,8 @@ body {
     .cat-container {
         margin: 20px auto; /* Center horizontally */
         max-width: 800px; /* Limit width for smaller screens */
+        margin-top: 50px;
+        margin-bottom: 200px;
        
     }
     
