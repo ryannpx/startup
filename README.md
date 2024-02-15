@@ -46,9 +46,12 @@ For this deliverable I built out the structure of my application using HTML.
 - added info page for information about the pomodoro timer
 
 - HTML pages - 3 HTML pages
-- Links - The login page automatically links to the home pagee. The home page has links to login and info.
-- Text - Text for descriptions.
-- Images - Embedded youtube playlist and cat images
-- DB/Login - Input box and submit button for login. 
-- WebSocket - Logins showing in real time to others and a live chat
+
+  # CSS Deliverable
+For this deliverable I styled my HTML.
+- Styled index.html, added a banner, and login box, and footer
+- Navbar at the top
+- Home, styled all of my things on my home page
+- Trying to get my page responsive all the way, having troubles with the footer, will work on fixing
+- Background colors fading and photos and youtube playlist embedded 
 
