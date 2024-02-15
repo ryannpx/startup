@@ -126,21 +126,27 @@ body {
     width: 50%;
    
 }
+.parent-container {
+    display: inline-block; /* Display as inline block */
+    width: auto; /* Automatically adjust width based on content */
+    margin-right: 20px;
+    margin-left: 800px;
+    margin-bottom: 200px;
+}
 
 .todo-container {
-    border: 2px solid #777575; /* Border around the clock */
-    padding: 20px;
-    width: 400px; /* Increase width */
+    width: 100%; /* Adjust the width of todo-container as needed */
     height: 200px;
-    margin: 20px auto; /* Center the clock */
+    margin-top: 20px;
+    border: 2px solid #777575;
+    padding: 20px;
     text-align: left;
-    border-radius: 2px; /* Rounded corners */
-    background-color: #b5b2b272; /* Background color */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
-    margin-right: 20px; /* Add right margin */
-    margin-top: 20px; /
-
+    border-radius: 2px;
+    background-color: #b5b2b272;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+
 
 
 .cat {
@@ -150,4 +156,5 @@ body {
     align-items: left !important; /* Horizontally center */
     margin-top: 20px !important; /* Adjust margin top as needed */
     margin-right: 400px;
+    width: 5%;
 }
