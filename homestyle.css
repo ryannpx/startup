@@ -11,7 +11,8 @@
 }
 
 body {
-    background-image: linear-gradient(to right, #d4e6f6c9, #faf6f6d1);
+    
+    background-image: linear-gradient(to right, #80b6e4c9, #faf6f6d1);
     background-size: 200% auto;
     animation: gradientAnimation 10s ease infinite;
 }
@@ -82,8 +83,8 @@ body {
 .digital-clock {
     border: 2px solid #ccc; /* Border around the clock */
     padding: 20px;
-    width: 300px; /* Increase width */
-    margin: 20px auto; /* Center the clock */
+     width: 400px;  /*Increase width */
+     margin: 20px auto; /* Center the clock */
     text-align: center;
     font-size: 48px; /* Increase font size */
     font-family: monospace; /* Use monospace font for digital appearance */
@@ -91,8 +92,9 @@ body {
     background-color: #f9f9f9; /* Background color */
     box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
     float: right; /* Float the clock to the right */
-    margin-right: 20px; /* Add right margin */
+    margin-right: 500px; /* Add right margin */
     margin-top: 20px; /* Add top margin */
+    margin-bottom: 30px;
 }
 
 
@@ -106,7 +108,7 @@ body {
 }
 
 .websocket-placeholder {
-    
+    display: inline-block; /* Display as inline block */
     padding: 10px;
     text-align: left;
     font-size: 16px;
@@ -122,39 +124,68 @@ body {
     
     margin: 20px; /* Add some margin for spacing */
     z-index: 1000; /* Ensure it's above other elements */
-    margin-left: 30px;
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
+    margin-bottom: 50px !important;
    
 }
+
 .parent-container {
+    flex: auto;
     display: inline-block; /* Display as inline block */
     width: auto; /* Automatically adjust width based on content */
-    margin-right: 20px;
-    margin-left: 800px;
-    margin-bottom: 200px;
+    margin-top: -550px;
+    margin-right: 50px;
+    float: right;
+
+   
+   
 }
 
 .todo-container {
     width: 100%; /* Adjust the width of todo-container as needed */
-    height: 200px;
+    height: 400px;
     margin-top: 20px;
-    border: 2px solid #777575;
+    border: 2px solid #7775755d;
     padding: 20px;
     text-align: left;
-    border-radius: 2px;
-    background-color: #b5b2b272;
+    border-radius: 10px;
+    background-color: #fefefecb;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
 }
 
 
-
-
 .cat {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: left !important; /* Vertically center */
-    align-items: left !important; /* Horizontally center */
+    
+    justify-content: right !important; /* Vertically center */
+    align-items: right !important; /* Horizontally center */
     margin-top: 20px !important; /* Adjust margin top as needed */
     margin-right: 400px;
-    width: 5%;
+    margin-left: 45px;
+    width: 50%;
+    font-size: 20px;
+    float: left;
+    margin-top: -1000px;
+}
+
+.cat-container{
+    flex: auto;
+    display: inline-block; /* Display as inline block */
+    width: auto; /* Automatically adjust width based on content */
+    margin-top: -450px;
+    margin-right: 20px;
+    float: left;
+}
+.motivation {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    background-color: #f9f9f97c;
+    margin-bottom: 20px;
+    width: 50%;
+    font-weight: bold;
 }
