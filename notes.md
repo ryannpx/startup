@@ -80,6 +80,11 @@ html
 - css!!!
 
 
+2/20
+- javascript is single threaded
+    - everything bust be asynchronous
+
+
 
 
 
