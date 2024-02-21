@@ -46,13 +46,13 @@ html {
 body {
     margin: 0;
    
-    background-image: linear-gradient(to right, #ff94a9c9, #faf6f6d1);
+    background-image: linear-gradient(to right, #dbf4ffc9, #faf6f6d1);
     background-size: 200% auto;
     animation: gradientAnimation 10s ease infinite;
 }
 
 .info-container {
-    background-color: #faf6f6d1 !important; /* Brown background color faf6f6d1 */
+    background-color: #faf6f6a0 !important; /* Brown background color faf6f6d1 */
     color: black; /* Text color */
     border-color: #8b4513; /* Border color */
     width: 1500px; /* Adjusted width */

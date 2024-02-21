@@ -11,7 +11,7 @@
 }
 
 body {
-    background-image: linear-gradient(to right, #80b6e4c9, #faf6f6d1);
+    background-image: linear-gradient(to right, #dbf4ffc9, #faf6f6d1);
     background-size: 200% auto;
     animation: gradientAnimation 10s ease infinite;
 }
@@ -21,15 +21,15 @@ body {
 }
 
 .digital-clock {
-    border: 2px solid #ccc; /* Border around the clock */
+    
     padding: 20px;
     width: 400px;  /*Increase width */
     margin: 20px auto; /* Center the clock */
     text-align: center;
-    font-size: 48px; /* Increase font size */
+    font-size: 55px; /* Increase font size */
     font-family: monospace; /* Use monospace font for digital appearance */
     border-radius: 10px; /* Rounded corners */
-    background-color: #f9f9f9; /* Background color */
+    background-color: #faf6f6ae; /* Background color */
     box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
     float: right; /* Float the clock to the right */
     margin-right: 500px; /* Add right margin */
@@ -88,6 +88,7 @@ body {
     margin-right: 20px; /* Add right margin */
     margin-top: 20px;
     margin-left: 20px;
+    
 }
 
 .websocket-placeholder {
@@ -96,8 +97,10 @@ body {
     text-align: left;
     font-size: 16px;
     font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
     border-radius: 5px;
-    background-color: #f9f9f97c;
+    background-color: #faf6f658;
+    
     margin-bottom: 20px;
 }
 
@@ -124,23 +127,23 @@ body {
     width: 100%; /* Adjust the width of todo-container as needed */
     height: 400px;
     margin-top: 20px;
-    border: 2px solid #7775755d;
+    font-size: 18px;
     padding: 20px;
     text-align: left;
     border-radius: 10px;
-    background-color: #fefefecb;
+    background-color: #ff94a95c;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .add-button {
-    background-color: #ff94a9a5 !important; /* Custom background color */
+    background-color: #ff94a9ce !important; /* Custom background color */
     color: #424242 !important; /* Text color */
     border-color: #ff94a9c9 !important; /* Border color */
 }
 
 .add-button:hover {
-    background-color: #ff94a9cd !important; /* Change background color on hover */
-    border-color: #fafbfc !important; /* Change border color on hover */
+    background-color: #fb859dcd !important; /* Change background color on hover */
+    border-color: #ff94a9cd !important; /* Change border color on hover */
 }
 
 .cat {
@@ -192,7 +195,7 @@ body {
     }
     
     body {
-        background-image: linear-gradient(to right, #80b6e4c9, #faf6f6d1);
+        background-image: linear-gradient(to right, #dbf4ffc9, #faf6f6d1);
         background-size: 200% auto;
         animation: gradientAnimation 10s ease infinite;
         padding-top: 20px; /* Add padding to prevent content from being cut off */
@@ -203,7 +206,7 @@ body {
     }
     
     .digital-clock {
-        border: 2px solid #ccc; /* Border around the clock */
+        
         padding: 20px;
         width: 400px;  /*Increase width */
         margin: 20px auto; /* Center the clock */
@@ -211,7 +214,7 @@ body {
         font-size: 48px; /* Increase font size */
         font-family: monospace; /* Use monospace font for digital appearance */
         border-radius: 10px; /* Rounded corners */
-        background-color: #f9f9f9; /* Background color */
+        background-color: #faf6f6ae; /* Background color */
         box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
     }
     
