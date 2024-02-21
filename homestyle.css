@@ -44,7 +44,7 @@ body {
 }
 
 .custom-button:hover {
-    background-color: #983246 !important; /* Change background color on hover */
+    background-color: #ff94a9  !important; /* Change background color on hover */
     border-color: #fafbfc !important; /* Change border color on hover */
 }
 
@@ -109,6 +109,7 @@ body {
     width: 50%;
     margin-bottom: 50px !important;
 }
+
 
 .parent-container {
     flex: auto;
