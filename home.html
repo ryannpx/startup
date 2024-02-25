@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <!-- Link to custom CSS file -->
     <link rel="stylesheet" href="homestyle.css">
+    <script src="websocket.js" type="module"></script>
+
+
    
 </head>
 <body>
@@ -48,21 +51,34 @@
                 </div>
             </div>
         </div>
+
+        <script src="timer.js" type="module"></script>
+    <script>
+        // Import functions from timer module
+        import { startTimer, pauseTimer } from './timer.js';
+
+        // Event listeners for start and pause buttons
+        document.getElementById('startButton').addEventListener('click', startTimer);
+        document.getElementById('pauseButton').addEventListener('click', pauseTimer);
+    </script>
+
         <div class="container websocket-container">
             <div id="websocket-placeholder" class="websocket-placeholder">
-                <p>Ryann has started a study session!</p>
-                <p>Elise finished a study session!</p>
-                <p>Ryann: Good job elise! :3</p>
-                <div class="field is-grouped">
-                    <div class="control">
-                        <input class="input" type="text" placeholder="Type your message...">
-                    </div>
-                    <div class="control">
-                        <button onclick="startWebSocket()" class="button chat-button">Chat</button>
-                    </div>
+                <!-- Messages will be displayed here -->
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <input id="message-input" class="input" type="text" placeholder="Type your message...">
+                </div>
+                <div class="control">
+                    <button id="sendButton" class="button chat-button">Send</button>
                 </div>
             </div>
         </div>
+        
+
+        
+
         
         <div class="youtube-container">
             <div class="youtube" id="youtube"> 
