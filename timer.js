@@ -39,3 +39,16 @@ function updateTimer() {
 
 // Export functions for external use
 export { startTimer, pauseTimer };
+document.addEventListener('DOMContentLoaded', function () {
+    // Your JavaScript code here
+    // Event listeners for start and pause buttons
+    document.getElementById('startButton').addEventListener('click', startTimer);
+    document.getElementById('pauseButton').addEventListener('click', pauseTimer);
+
+    // Event listener for the send button
+    document.getElementById('sendButton').addEventListener('click', sendMessage);
+
+    // Display mocked messages initially
+    displayMockedMessages();
+});
+
