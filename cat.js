@@ -1,10 +1,26 @@
 // Define an array of motivation phrases
 const motivationPhrases = [
-    "You got this!",
-    "Keep going, you're doing great!",
-    "Stay focused and motivated!",
-    "Believe in yourself, you can do it!",
-    "Success is just around the corner!"
+    "You've got this!", 
+"Keep going!", 
+"Stay strong.", 
+"One step at a time.", 
+"You're unstoppable.", 
+"Believe in yourself.", 
+"You're capable.", 
+"Make it happen.", 
+"Dream big.", 
+"Never give up.", 
+"Stay focused.", 
+"Embrace the journey.", 
+"You're a winner.", 
+"Keep pushing forward.", 
+"You can do it.", 
+"Stay positive.", 
+"Chase your dreams.", 
+"Rise and grind.", 
+"Push yourself.", 
+"Be brave.",
+
 ];
 
 // Get references to the cat image and motivation div

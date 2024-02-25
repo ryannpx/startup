@@ -166,6 +166,17 @@ body {
     margin-right: 20px;
     float: left;
 }
+.cat img {
+    cursor: pointer; /* Change cursor to pointer when hovering over the cat image */
+}
+
+.cat img:nth-of-type(2) {
+    width: 20px; /* Set the width of the second image to match the width of the first image */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position the second image relative to its container */
+    top: 0; /* Position it at the top of its container */
+    left: 0; /* Position it at the left of its container */
+}
 
 .motivation {
     padding: 10px;
