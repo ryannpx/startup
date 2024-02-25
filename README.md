@@ -47,11 +47,19 @@ For this deliverable I built out the structure of my application using HTML.
 
 - HTML pages - 3 HTML pages
 
-  # CSS Deliverable
+# CSS Deliverable
 For this deliverable I styled my HTML.
 - Styled index.html, added a banner, and login box, and footer
 - Navbar at the top
 - Home, styled all of my things on my home page
 - Trying to get my page responsive all the way, having troubles with the footer, will work on fixing
-- Background colors fading and photos and youtube playlist embedded 
+- Background colors fading and photos and youtube playlist embedded
+
+# JAVASCRIPT Deliverable
+For this deliverable I added the functionality of my website.
+- Collects login info from login screen, working on putting name into nav bar or something
+- Websocket chat bar works, and placeholder to display the name of the user before the chat.
+- Timer counts down from 25 minutes, start and pause buttons dissapear, working on that
+- Functional to do list
+- Clicking on the cat changes the picture and the motivational saying. Working on sizing of it
 
