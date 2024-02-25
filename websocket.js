@@ -16,7 +16,6 @@ function displayMockedMessages() {
 }
 
 // Function to send user input to mocked database data
-// Function to send user input to mocked database data
 function sendMessage() {
     const messageInput = document.getElementById('message-input').value.trim();
     if (messageInput !== '') {
@@ -33,10 +32,19 @@ function sendMessage() {
     }
 }
 
-
 // Event listener for the send button
 document.getElementById('sendButton').addEventListener('click', sendMessage);
 
+// Event listener for pressing Enter key in the input field
+document.getElementById('message-input').addEventListener('keypress', function(event) {
+    // Check if the pressed key is Enter (keyCode 13)
+    if (event.keyCode === 13) {
+        // Prevent the default action (form submission)
+        event.preventDefault();
+        // Call the sendMessage function
+        sendMessage();
+    }
+});
 
 // Function to display a message in the chat
 function displayMessage(message) {
