@@ -1,4 +1,5 @@
-// timer.js
+// Export functions for external use
+//  export { startTimer, pauseTimer }; when gone this makes the timer not work
 
 // Timer variables
 let minutes = 25;
@@ -36,6 +37,8 @@ function updateTimer() {
     }
     document.getElementById('countdown').textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
+
+// Rest of your JavaScript code...
 
 // Export functions for external use
 export { startTimer, pauseTimer };
