@@ -34,7 +34,7 @@ let currentImageState = 3; // Start with image 3
 catImage.addEventListener('click', function() {
     // Alternate between images 2 and 3
     if (currentImageState === 3) {
-        catImage.src = 'Untitled_Artwork (2).png';
+        catImage.src = 'resized.png';
         currentImageState = 2;
     } else {
         catImage.src = 'Untitled_Artwork (3).png';

@@ -62,4 +62,5 @@ For this deliverable I added the functionality of my website.
 - Timer counts down from 25 minutes, start and pause buttons dissapear, working on that
 - Functional to do list
 - Clicking on the cat changes the picture and the motivational saying. Working on sizing of it
+- Working on hamburger on small screen
 
