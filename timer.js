@@ -1,7 +1,9 @@
-let minutes = 25; // Changed to 1 minute
+let minutes = 25; // Initial timer value set to 1 minute
 let seconds = 0;
 let timer;
 let isRunning = false;
+let sound;
+let currentInterval = 1; // Variable to track the current timer interval
 
 function updateTimer() {
     if (seconds === 0) {
@@ -10,17 +12,15 @@ function updateTimer() {
             isRunning = false;
             // Play sound when timer reaches 0
             playSound();
-            // Switch between 25-minute and 5-minute intervals
-            if (seconds === 0) {
-                if (minutes === 25) {
-                    minutes = 5;
-                } else {
-                    minutes = 25;
-                }
-                seconds = 0;
-            }
-            // Restart timer with new interval
-            timer = setInterval(updateTimer, 1000);
+            // Switch between 1 and 2 minutes interval
+            currentInterval = (currentInterval === 25) ? 5 : 25;
+            // Reset timer to the current interval
+            minutes = currentInterval;
+            seconds = 0;
+            document.getElementById('countdown').textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            // Update display
+            document.getElementById('startButton').style.display = 'inline-block';
+            document.getElementById('pauseButton').style.display = 'none';
         } else {
             minutes--;
             seconds = 59;
@@ -55,15 +55,15 @@ function pauseTimer() {
 }
 
 function stopSound() {
-    // Get the audio element
-    const sound = document.getElementById('timerSound');
-    // Pause and reset the audio playback
-    sound.pause();
-    sound.currentTime = 0;
+    if (sound) {
+        // Pause and reset the audio playback
+        sound.pause();
+        sound.currentTime = 0;
+    }
 }
 
 function playSound() {
     // Play sound here
-    const sound = new Audio('ringtone.mp3'); // Replace 'path/to/sound.mp3' with the actual path to your sound file
+    sound = new Audio('ringtone.mp3'); // Replace 'ringtone.mp3' with the actual path to your sound file
     sound.play();
 }
