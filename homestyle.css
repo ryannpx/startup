@@ -34,7 +34,7 @@ body {
     float: right; /* Float the clock to the right */
     margin-right: 500px; /* Add right margin */
     margin-top: 20px; /* Add top margin */
-    margin-bottom: 30px;
+    
 }
 
 .custom-button {
@@ -60,6 +60,36 @@ body {
     background-color: #ff94a9 !important; /* Change background color on hover */
     border-color: #fafbfc !important; /* Change border color on hover */
 }
+
+.button-container {
+    padding: 10px;
+    width: 400px;  /*Increase width */
+    margin: 20px auto; /* Center the clock */
+    text-align: center;
+    font-size: 55px; /* Increase font size */
+    font-family: monospace; /* Use monospace font for digital appearance */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #faf6f6ae; /* Background color */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
+    float: right; /* Float the clock to the right */
+    margin-right: 500px; /* Add right margin */
+    margin-top: 0px; /* Add top margin */
+    margin-bottom: 30px;
+}
+
+.button-container .button {
+    display: inline-block;
+    background-color: #ff94a9c9;
+    color: #424242;
+    border-color: #ff94a9c9;
+    margin: 0 5px;
+}
+
+.button-container .button:hover {
+    background-color: #ff94a9;
+    border-color: #fafbfc;
+}
+
 
 
 
@@ -90,7 +120,7 @@ body {
     flex-direction: column;
     float: left;
     margin-right: 20px; /* Add right margin */
-    margin-top: 20px;
+    margin-top: -150px;
     margin-left: 20px;
     
 }
