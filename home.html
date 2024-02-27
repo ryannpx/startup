@@ -43,7 +43,7 @@
     <main>
         <!-- Your main content here -->
         <div class="container custom-container">
-            <div class="countdown digital-clock" id="countdown"> <!-- Apply digital-clock class to countdown -->
+            <div class="countdown digital-clock" id="countdown">
                 25:00
                 <div>
                     <button id="startButton" class="button custom-button" style="margin-top: 10px;">Start</button>
@@ -51,16 +51,17 @@
                 </div>
             </div>
         </div>
+    
 
        
-    <script>
+    <!-- <script>
         // Import functions from timer module
         import { startTimer, pauseTimer } from './timer.js';
 
         // Event listeners for start and pause buttons
         document.getElementById('startButton').addEventListener('click', startTimer);
         document.getElementById('pauseButton').addEventListener('click', pauseTimer);
-    </script>
+    </script> -->
 
         <div class="container websocket-container">
             <div id="websocket-placeholder" class="websocket-placeholder">
@@ -126,7 +127,8 @@
             <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
         </div>
     </footer>
-    <script src="timer.js" type="module"></script>
+    <script src="timer.js"></script> 
+    <!-- <script src="timer.js" type="module"></script> -->
     <script src="cat.js"></script>
     <script src="todo.js"></script>
 </body>

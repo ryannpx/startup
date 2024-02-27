@@ -38,6 +38,7 @@ body {
 }
 
 .custom-button {
+    display: inline-block  !important; 
     background-color: #ff94a9c9 !important; /* Custom background color */
     color: #424242; /* Text color */
     border-color: #ff94a9c9; /* Border color */
@@ -49,6 +50,7 @@ body {
 }
 
 .other-button {
+    display: inline-block  !important; 
     background-color: #ff94a9c9 !important; /* Custom background color */
     color: #424242; /* Text color */
     border-color: #ff94a9c9; /* Border color */
@@ -58,6 +60,8 @@ body {
     background-color: #ff94a9 !important; /* Change background color on hover */
     border-color: #fafbfc !important; /* Change border color on hover */
 }
+
+
 
 .chat-button {
     background-color: #58afb2 !important; /* Custom background color */
