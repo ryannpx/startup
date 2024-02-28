@@ -158,7 +158,7 @@ background-color: rgba(255, 255, 255, 0.429)  !important; /* White background co
     margin-top: -250px;
     margin-left: 20px;
     font-family: 'Roboto', sans-serif;
-    
+    margin-bottom: 100px;
 }
 
 .websocket-placeholder {
@@ -229,7 +229,7 @@ background-color: rgba(255, 255, 255, 0.429)  !important; /* White background co
     /* Your existing styles */
     justify-content: right !important; /* Vertically center */
     align-items: right !important; /* Horizontally center */
-    margin-top: 20px !important; /* Adjust margin top as needed */
+    margin-top: 200px !important; /* Adjust margin top as needed */
     margin-right: 400px; /* This margin might not be necessary */
     margin-left: 45px; /* This margin might not be necessary */
     font-size: 20px;
@@ -238,9 +238,11 @@ background-color: rgba(255, 255, 255, 0.429)  !important; /* White background co
 
 .cat-container {
     display: inline-block; /* Display as inline block */
-    margin-top: -500px; /* Adjust margin top as needed */
+    margin-top: -900px; /* Adjust margin top as needed */
     margin-right: 20px;
     margin-bottom: 50px;
+    color: white;
+    font-size: 10px;
 }
 
 .cat img {
