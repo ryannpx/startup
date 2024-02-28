@@ -196,7 +196,7 @@ background-color: rgba(255, 255, 255, 0.429)  !important; /* White background co
     padding: 20px;
     text-align: left;
     border-radius: 10px;
-    background-color: #ff94a98a;
+    background-color: #ffc3d08a;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin-right: 20px; /* Add margin to separate from right edge */
     margin-right: 0px;
@@ -247,15 +247,10 @@ background-color: rgba(255, 255, 255, 0.429)  !important; /* White background co
 
 .cat img {
     cursor: pointer; /* Change cursor to pointer when hovering over the cat image */
+    width: 170px;
 }
 
-.cat img:nth-of-type(2) {
-    width: 20px; /* Set the width of the second image to match the width of the first image */
-    height: auto; /* Maintain aspect ratio */
-    position: absolute; /* Position the second image relative to its container */
-    top: 0; /* Position it at the top of its container */
-    left: 0; /* Position it at the left of its container */
-}
+
 
 .motivation {
     padding: 10px;
