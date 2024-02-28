@@ -21,36 +21,51 @@ body {
     animation: none; /*able any existing animation */
 }
 
-#gifButton{
-    background-color: #ff94a9ce !important; /* Custom background color */
-    color: #424242 !important; /* Text color */
-    border-color: #ff94a9c9 !important; /* Border color */
+.gif{
+    background-color: #f4f4f40d !important; /* Custom background color */
+    color: #fffefe !important; /* Text color */
+    border-color: #ff94a900 !important; /* Border color */
+    margin-top: 10px;
+    margin-left: 20px;
+    
+    
+    
 }
 
 #gifButton:hover{
-    background-color: #fb859dcd !important; /* Change background color on hover */
-    border-color: #ff94a9cd !important; 
+    background-color: #e9e9e99a !important; /* Change background color on hover */
+    border-color: #ff94a900 !important; 
 }
 .custom-header {
-    background-color: #faf6f66e !important; /* Cream background color */
+    background-color: #ffffff00 !important; /* Cream background color */
+    
+    
+}
+.custom-header .navbar-item {
+    color: #ffffffd0 !important; /* White text color */
+    font-size: 20px;
+}
+.custom-header .navbar-item:hover {
+    color: rgb(255, 255, 255) !important; /* Red text color on hover */
+background-color: rgba(255, 255, 255, 0.429)  !important; /* White background color on hover */
 }
 
+
 .digital-clock {
-    
     padding: 20px;
-    width: 400px;  /*Increase width */
-    margin: 20px auto; /* Center the clock */
+    width: 400px;  /* Increase width */
+    margin: 20px auto; /* Center the clock horizontally */
     text-align: center;
     font-size: 55px; /* Increase font size */
-    font-family: monospace; /* Use monospace font for digital appearance */
+    font-family: 'Roboto', sans-serif; /* Use Roboto font for digital appearance */
+    font-weight: bold;
     border-radius: 10px; /* Rounded corners */
-    background-color: #faf6f6ae; /* Background color */
+    background-color: #761b1b !important; /* Background color */
     box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
-    float: right; /* Float the clock to the right */
-    margin-right: 500px; /* Add right margin */
+    /* Remove float and margin-right */
     margin-top: 20px; /* Add top margin */
-    
 }
+
 
 .custom-button {
     display: inline-block  !important; 
@@ -78,31 +93,31 @@ body {
 
 .button-container {
     padding: 10px;
-    width: 400px;  /*Increase width */
-    margin: 20px auto; /* Center the clock */
+    width: 400px;  /* Increase width */
+    margin: 20px auto; /* Center the button-container horizontally */
     text-align: center;
-    font-size: 55px; /* Increase font size */
-    font-family: monospace; /* Use monospace font for digital appearance */
+    font-size: 16px; /* Adjust font size as needed */
+    font-family: monospace; /* Use monospace font */
     border-radius: 10px; /* Rounded corners */
-    background-color: #faf6f6ae; /* Background color */
+    background-color: #faf6f600; /* Background color */
     box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
-    float: right; /* Float the clock to the right */
-    margin-right: 500px; /* Add right margin */
+    /* Remove float and margin-right */
     margin-top: 0px; /* Add top margin */
     margin-bottom: 30px;
 }
 
+
 .button-container .button {
     display: inline-block;
-    background-color: #ff94a9c9;
-    color: #424242;
+    background-color: #ff94a9 !important;
+    color: #ffffff;
     border-color: #ff94a9c9;
     margin: 0 5px;
 }
 
 .button-container .button:hover {
-    background-color: #ff94a9;
-    border-color: #fafbfc;
+    background-color: #e78397 !important;
+    border-color: #e78397 !important;
 }
 
 
@@ -120,23 +135,29 @@ body {
 }
 
 .custom-container .countdown {
-    background-color: #faf6f6d1 !important; /* Brown background color */
-    color: #424242; /* Text color */
+    background-color: #faf6f663 !important; /* Brown background color */
+    color: #f0f0f0; /* Text color */
     border-color: #42424264; /* Border color */
+    font-size: 70px;
+    font-weight: bold;
 }
 
 .custom-footer {
-    background-color: #faf6f66e !important; /* Cream background color */
-    height: 10vh;
+    background-color: #faf6f600 !important; /* Cream background color */
+    height: 50px !important;
+    color: #ffffffd0 !important; /* White text color */
+    font-size: 20px;
 }
+
 
 .websocket-container {
     display: flex;
     flex-direction: column;
     float: left;
     margin-right: 20px; /* Add right margin */
-    margin-top: -150px;
+    margin-top: -250px;
     margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
     
 }
 
@@ -148,46 +169,55 @@ body {
     font-family: Arial, sans-serif;
     box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add shadow */
     border-radius: 5px;
-    background-color: #faf6f658;
-    
-    margin-bottom: 20px;
+    background-color: #faf6f621;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
 }
-
-.youtube-container {
-    margin: 20px; /* Add some margin for spacing */
-    z-index: 1000; /* Ensure it's above other elements */
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    margin-bottom: 50px !important;
-}
-
 
 .parent-container {
-    flex: auto;
-    display: inline-block; /* Display as inline block */
-    width: auto; /* Automatically adjust width based on content */
-    margin-top: -550px;
-    margin-right: 50px;
+    display: flex; /* Use flexbox to align items */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: flex-end; /* Align items to the bottom of the container */
+    align-items: flex-end; /* Align items to the right side */
+    width: 350px;
+    margin-right: 10px;
     float: right;
+    margin-top: -450px;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
 .todo-container {
-    width: 100%; /* Adjust the width of todo-container as needed */
+    width: 100%;
     height: 400px;
     margin-top: 20px;
     font-size: 18px;
     padding: 20px;
     text-align: left;
     border-radius: 10px;
-    background-color: #ff94a95c;
+    background-color: #ff94a98a;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-right: 20px; /* Add margin to separate from right edge */
+    margin-right: 0px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
+.youtube-container {
+    margin: 20px auto; /* Add some margin for spacing */
+    width: 50%;
+    margin-bottom: 50px !important;
+    width: 500px;
+    margin-top: 20px; /* Adjust margin-top as needed */
+}
+
+
 .add-button {
-    background-color: #ff94a9ce !important; /* Custom background color */
-    color: #424242 !important; /* Text color */
+    background-color: #ff94a9e0 !important; /* Custom background color */
+    color: #fbfbfb !important; /* Text color */
     border-color: #ff94a9c9 !important; /* Border color */
+    font-family: 'Roboto', sans-serif;
 }
 
 .add-button:hover {
@@ -196,26 +226,23 @@ body {
 }
 
 .cat {
+    /* Your existing styles */
     justify-content: right !important; /* Vertically center */
     align-items: right !important; /* Horizontally center */
     margin-top: 20px !important; /* Adjust margin top as needed */
-    margin-right: 400px;
-    margin-left: 45px;
-    width: 50%;
+    margin-right: 400px; /* This margin might not be necessary */
+    margin-left: 45px; /* This margin might not be necessary */
     font-size: 20px;
-    float: left;
-    margin-top: -1000px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .cat-container {
-    flex: auto;
     display: inline-block; /* Display as inline block */
-    width: auto; /* Automatically adjust width based on content */
-    margin-top: -450px;
+    margin-top: -500px; /* Adjust margin top as needed */
     margin-right: 20px;
-    float: left;
-    
+    margin-bottom: 50px;
 }
+
 .cat img {
     cursor: pointer; /* Change cursor to pointer when hovering over the cat image */
 }
@@ -238,14 +265,27 @@ body {
     margin-bottom: 20px;
     width: 50%;
     font-weight: bold;
+    color: white;
+    font-family: 'Roboto', sans-serif;
 }
 .clear-button {
     position: absolute;
     bottom: 10px; /* Adjust as needed */
     right: 10px; /* Adjust as needed */
-    background-color: rgba(255, 255, 255, 0.54);
+    background-color: rgba(255, 255, 255, 0.358);
+    color: white;
+    border: white;
+}
+.clear-button:hover{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.625);
 }
 
+.github{
+    background-color: rgba(255, 255, 255, 0.563);
+    
+    
+}
 /* Media queries for smaller screens */
 /* CSS for smaller screens (max-width: 767px) */
 @media screen and (max-width: 767px) {
