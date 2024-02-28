@@ -9,14 +9,16 @@
     <!-- Link to custom CSS file -->
     <link rel="stylesheet" href="info.css">
     <link rel="icon" href="pomo study.png" type="image/x-icon" width="2000">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
 <body>
     <nav class="navbar is-light custom-header" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="#">
-                <img id="navbar-logo" src="pomo study.png">
+                <img id="navbar-logo" src="pomo study.png" >
             </a>
+            
     
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -73,7 +75,14 @@
 
     <footer class="footer custom-footer">
         <div class="content has-text-centered">
-            <p>Visit my <a href="https://github.com/ryannpx" target="_blank">GitHub!</a></p>
+            <p class="is-centered"> <!-- Center the button -->
+                <a href="https://github.com/ryannpx" target="_blank" class="button github"> <!-- Added is-medium for larger button -->
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>GitHub</span>
+                </a>
+            </p>
         </div>
     </footer>
 </body>

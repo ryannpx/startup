@@ -21,6 +21,14 @@
     max-width: none; /* Remove the maximum width constraint */
     height: auto; /* Ensure the height adjusts according to the width */
 }
+.custom-header .navbar-item {
+    color: #494949d0 !important; /* White text color */
+    font-size: 20px;
+}
+.custom-header .navbar-item:hover {
+    color: #494949d0 !important; /* Red text color on hover */
+background-color: rgba(255, 255, 255, 0.752)  !important; /* White background color on hover */
+}
 
 @keyframes gradientAnimation {
     0% {
@@ -46,6 +54,7 @@ body {
     background-color: #faf6f6ae !important; /* Brown background color faf6f6d1 */
     color: white; /* Text color */
     border-color: #8b4513; /* Border color */
+    font-family: 'Roboto', sans-serif;
 }
 
 

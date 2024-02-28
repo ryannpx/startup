@@ -46,7 +46,7 @@ html {
 body {
     margin: 0;
    
-    background-image: linear-gradient(to right, #dbf4ffc9, #faf6f6d1);
+    background-image: linear-gradient(to right, #ffc4d0, #faf6f6d1);
     background-size: 200% auto;
     animation: gradientAnimation 10s ease infinite;
 }
@@ -64,7 +64,26 @@ body {
 
 /* Custom styles for the footer */
 .custom-footer {
-    background-color: #faf6f66e !important; /* Cream background color */
-    height: 10vh
+    background-color: #faf6f632 !important; /* Cream background color */
+    height: 50px !important;
+    color: #ffffffd0 !important; /* White text color */
+    font-size: 20px;
+}
+.github{
+    background-color: rgba(255, 255, 255, 0.563);
     
+    
+}
+
+#navbar-logo {
+    max-width: none; /* Remove the maximum width constraint */
+    height: auto; /* Ensure the height adjusts according to the width */
+}
+.custom-header .navbar-item {
+    color: #494949d0 !important; /* White text color */
+    font-size: 20px;
+}
+.custom-header .navbar-item:hover {
+    color: #494949d0 !important; /* Red text color on hover */
+background-color: rgba(255, 255, 255, 0.752)  !important; /* White background color on hover */
 }
