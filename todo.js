@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     label.style.textDecoration = 'none'; // Remove strikethrough when checkbox is unchecked
                 }
+                updateLocalStorage(); // Update local storage when checkbox state changes
             });
             
             // Event listener for label click to toggle checkbox
@@ -33,15 +34,49 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     label.style.textDecoration = 'none'; // Remove strikethrough when checkbox is unchecked
                 }
+                updateLocalStorage(); // Update local storage when checkbox state changes
             });
 
             listItem.appendChild(checkbox);
             listItem.appendChild(label);
             todoList.appendChild(listItem);
+
+            updateLocalStorage(); // Update local storage when a task is added
         } else {
             alert('You have reached the maximum limit of tasks.'); // Alert the user if maximum limit is reached
         }
     }
+
+    // Function to update local storage with current tasks
+    function updateLocalStorage() {
+        const tasks = [];
+        todoList.querySelectorAll('li').forEach(function(item) {
+            tasks.push({
+                name: item.querySelector('label').textContent,
+                completed: item.querySelector('input').checked
+            });
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    // Function to load tasks from local storage
+    function loadTasksFromLocalStorage() {
+        const storedTasks = localStorage.getItem('tasks');
+        if (storedTasks) {
+            const tasks = JSON.parse(storedTasks);
+            tasks.forEach(function(task) {
+                addTask(task.name);
+                const lastTask = todoList.lastChild;
+                lastTask.querySelector('input').checked = task.completed;
+                if (task.completed) {
+                    lastTask.querySelector('label').style.textDecoration = 'line-through';
+                }
+            });
+        }
+    }
+
+    // Load tasks from local storage when the page loads
+    loadTasksFromLocalStorage();
 
     // Event listener for the form submission
     todoForm.addEventListener('submit', function (event) {
@@ -60,5 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
         while (todoList.firstChild) {
             todoList.removeChild(todoList.firstChild);
         }
+        updateLocalStorage(); // Update local storage when tasks are cleared
     });
 });
