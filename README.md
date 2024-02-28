@@ -57,7 +57,7 @@ For this deliverable I styled my HTML.
 
 # JAVASCRIPT Deliverable
 For this deliverable I added the functionality of my website.
-- Collects login info from login screen, working on putting name into nav bar or something
+- Collects login info from login screen, user is displayed above timer
 - Database js for keeping your to-do list and timer the same
 - Websocket chat bar works, and placeholder to display the name of the user before the chat, and js support for the websocket connection
 - Timer counts down from 25 minutes, start and pause buttons work, plays a sound at 0, and starts a 5 minute timer
