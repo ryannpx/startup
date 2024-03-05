@@ -42,7 +42,7 @@ app.use(function (err, req, res, next) {
 });
 
 // Listening to a network port
-const port = 8080;
+const port = 3000;
 app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
