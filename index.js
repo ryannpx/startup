@@ -1,20 +1,48 @@
-// Function to handle login form submission
-document.querySelector('.login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const app = express();
 
-    // Get the values from the username and password fields
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+// Third party middleware - Cookies
+app.use(cookieParser());
 
-    // Here, you would typically send the username and password to the server for authentication
-    // For now, let's just log them to the console
-    console.log('Username:', username);
-    console.log('Password:', password);
-
-    // Assuming successful authentication, store the username in local storage
-    localStorage.setItem('username', username);
-
-    // Redirect to the home page
-    window.location.href = 'home.html';
+app.post('/cookie/:name/:value', (req, res, next) => {
+  res.cookie(req.params.name, req.params.value);
+  res.send({cookie: `${req.params.name}:${req.params.value}`});
 });
 
+app.get('/cookie', (req, res, next) => {
+  res.send({cookie: req.cookies});
+});
+
+// Creating your own middleware - logging
+app.use((req, res, next) => {
+  console.log(req.originalUrl);
+  next();
+});
+
+// Built in middleware - Static file hosting
+app.use(express.static('public'));
+
+// Routing middleware
+app.get('/store/:storeName', (req, res) => {
+  res.send({name: req.params.storeName});
+});
+
+app.put('/st*/:storeName', (req, res) => res.send({update: req.params.storeName}));
+
+app.delete(/\/store\/(.+)/, (req, res) => res.send({delete: req.params[0]}));
+
+// Error middleware
+app.get('/error', (req, res, next) => {
+  throw new Error('Trouble in river city');
+});
+
+app.use(function (err, req, res, next) {
+  res.status(500).send({type: err.name, message: err.message});
+});
+
+// Listening to a network port
+const port = 8080;
+app.listen(port, function () {
+  console.log(`Listening on port ${port}`);
+});
