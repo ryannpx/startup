@@ -235,7 +235,7 @@ background-color: rgba(255, 255, 255, 0.429)  !important; /* White background co
     /* Your existing styles */
     justify-content: right !important; /* Vertically center */
     align-items: right !important; /* Horizontally center */
-    margin-top: 200px !important; /* Adjust margin top as needed */
+    margin-top: 600px !important; /* Adjust margin top as needed */
     margin-right: 400px; /* This margin might not be necessary */
     margin-left: 45px; /* This margin might not be necessary */
     font-size: 20px;
