@@ -108,7 +108,7 @@ const app = express();
 
 // Middleware to parse JSON body
 app.use(bodyParser.json());
-
+app.use(express.json());
 // In-memory database for simplicity (replace this with a real database in production)
 let users = [];
 
