@@ -6,7 +6,8 @@ This is my startup web application for cs 260!
 
 ![Login](https://github.com/ryannpx/startup/assets/100808014/9cfd9106-b629-4164-91eb-3b5234b43355)
 
-![Home](https://github.com/ryannpx/startup/blob/main/IMG_0473.jpg?raw=true)
+![Home](https://github.com/ryannpx/startup/assets/100808014/57ee7843-0d17-4566-a9ee-d29e882d32d1)
+
 
 ### Key Features
 - Pomodero Timer 
