@@ -62,5 +62,7 @@ function displayQuote() {
 
 // Call the displayQuote function when the page loads
 document.addEventListener('DOMContentLoaded', displayQuote);
+// Function to handle click event on cat image
+document.getElementById('cat-image').addEventListener('click', displayQuote);
 
   
