@@ -65,4 +65,24 @@ document.addEventListener('DOMContentLoaded', displayQuote);
 // Function to handle click event on cat image
 document.getElementById('cat-image').addEventListener('click', displayQuote);
 
+
+// Function to change cat image on mouseover
+function changeCatImage() {
+  const catImage = document.getElementById('cat-image');
+  catImage.src = 'Untitled_Artwork (2).png';
+}
+
+// Function to restore cat image on mouseout
+function restoreCatImage() {
+  const catImage = document.getElementById('cat-image');
+  catImage.src = 'Untitled_Artwork (3).png';
+}
+
+// Add event listener for mouseover to change cat image
+document.getElementById('cat-image').addEventListener('mouseover', changeCatImage);
+
+// Add event listener for mouseout to restore cat image
+document.getElementById('cat-image').addEventListener('mouseout', restoreCatImage);
+
+
   

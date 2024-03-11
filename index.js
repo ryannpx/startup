@@ -55,15 +55,26 @@ app.get('/quote', async (req, res) => {
       const response = await fetch('https://api.quotable.io/random');
       const data = await response.json();
       console.log('Response from API:', data); // Log the response
-      const quote = data.content;
+      
+      // Extract the quote content
+      const quoteContent = data.content;
 
-      // Send the quote in the response
-      res.json({ quote });
+      // Check if the quote content has 35 characters or fewer
+      if (quoteContent.length <= 35) {
+          // Send the quote in the response if it meets the character limit
+          res.json({ quote: quoteContent });
+      } else {
+          // Send an empty quote in the response if the quote exceeds the character limit
+          res.json({ quote: '' });
+      }
   } catch (error) {
       console.error('Error fetching quote:', error);
       res.status(500).json({ error: 'Failed to fetch quote' });
   }
 });
+
+
+
 
 // Start the server
 const port = 3000;

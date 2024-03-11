@@ -270,6 +270,8 @@ background-color: rgba(255, 255, 255, 0.429)  !important; /* White background co
     font-weight: bold;
     color: white;
     font-family: 'Roboto', sans-serif;
+    text-align: left;
+    max-width: 400px
 }
 .clear-button {
     position: absolute;
@@ -288,6 +290,13 @@ background-color: rgba(255, 255, 255, 0.429)  !important; /* White background co
     background-color: rgba(255, 255, 255, 0.563);
     
     
+}
+
+body {
+    background-size: cover; /* Ensure the background covers the entire viewport */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-position: center center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background fixed relative to the viewport */
 }
 /* Media queries for smaller screens */
 /* CSS for smaller screens (max-width: 767px) */
