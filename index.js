@@ -108,7 +108,7 @@ const app = express();
 
 // Middleware to parse JSON body
 app.use(bodyParser.json());
-app.use(express.json());
+// app.use(express.json());
 // In-memory database for simplicity (replace this with a real database in production)
 let users = [];
 
@@ -181,7 +181,7 @@ app.get('/quote', async (req, res) => {
 app.use(express.static('public'));
 
 // Start the server
-const port = 3000;
+const port = 4000;
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
