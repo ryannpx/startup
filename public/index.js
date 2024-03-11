@@ -23,9 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
             if (response.ok) {
-                // Assuming successful authentication, store the username in local storage
-                localStorage.setItem('username', username);
-                // Redirect to the home page
+                // Assuming successful authentication, redirect to the home page
                 window.location.href = 'home.html';
             } else {
                 // Handle authentication failure (e.g., display error message)
@@ -35,5 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Error:', error);
         });
+    });
+
+    // Function to handle click event on login button
+    document.getElementById('login-button').addEventListener('click', function() {
+        // Redirect to the home page
+        console.log('Login button clicked');
+        window.location.href = 'home.html';
     });
 });

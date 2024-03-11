@@ -1,12 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Retrieve the username from local storage
-    const username = localStorage.getItem('username');
-
-    // Display the username on the page
-    const usernameDisplay = document.getElementById('usernameDisplay');
-    if (username) {
-        usernameDisplay.textContent = `Welcome, ${username}!`;
-    } else {
-        usernameDisplay.textContent = 'Welcome!'; // If username is not found
-    }
+    // Fetch the username from the backend service
+    fetch('/user', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Failed to fetch username');
+        }
+    })
+    .then(data => {
+        // Display the username on the page
+        const usernameDisplay = document.getElementById('usernameDisplay');
+        usernameDisplay.textContent = `Welcome, ${data.username}!`;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Display a generic welcome message if fetching username fails
+        const usernameDisplay = document.getElementById('usernameDisplay');
+        usernameDisplay.textContent = 'Welcome!';
+    });
 });
