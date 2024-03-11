@@ -47,6 +47,23 @@ app.get('/user', (req, res) => {
     }
     res.json({ username: user.username }); // Return user details
 });
+// Endpoint to fetch inspirational quote
+// Endpoint to fetch inspirational quote
+app.get('/quote', async (req, res) => {
+  try {
+      // Fetch quote from a third-party API
+      const response = await fetch('https://api.quotable.io/random');
+      const data = await response.json();
+      console.log('Response from API:', data); // Log the response
+      const quote = data.content;
+
+      // Send the quote in the response
+      res.json({ quote });
+  } catch (error) {
+      console.error('Error fetching quote:', error);
+      res.status(500).json({ error: 'Failed to fetch quote' });
+  }
+});
 
 // Start the server
 const port = 3000;
