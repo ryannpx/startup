@@ -73,7 +73,26 @@ app.get('/quote', async (req, res) => {
   }
 });
 
+// In-memory database for simplicity (replace this with a real database in production)
+const userTasks = {};
 
+// Endpoint to get tasks for a specific user
+app.get('/tasks/:userId', (req, res) => {
+    const userId = req.params.userId;
+    const tasks = userTasks[userId] || [];
+    res.json({ tasks });
+});
+
+// Endpoint to save a task for a specific user
+app.post('/tasks/:userId', (req, res) => {
+    const userId = req.params.userId;
+    const { task } = req.body;
+    if (!userTasks[userId]) {
+        userTasks[userId] = [];
+    }
+    userTasks[userId].push(task);
+    res.status(201).json({ message: 'Task saved successfully' });
+});
 
 
 // Start the server
