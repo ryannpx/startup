@@ -68,3 +68,11 @@ For this deliverable I added the functionality of my website.
 - Working on hamburger on small screen, and layout of resizing as well
 - Changed background and added button that changes the background
 
+# Service Deliverable
+For this deliverable I created an HTTP Service using node and express
+- Created working service with local host
+- Login has enpoints for user and logging in, no longer takes from storage. Button doesnt work because it needs working login info
+- Pulls 3rd party quotes when clicking on cat in the home page
+- To do list: Made endpoints for my to do list to take and save users own tasks, right now I kept local storage for demo purposes though.
+- Updated some JS, burger now works when screen is made smaller, havent fixed all of the CSS yet to restyle there yet.
+- Timer works a little differently now
