@@ -49,6 +49,19 @@ body {
     color: rgb(255, 255, 255) !important; /* Red text color on hover */
 background-color: rgba(255, 255, 255, 0.429)  !important; /* White background color on hover */
 }
+.custom-header .navbar-burger {
+    color: #ffffffd0 !important; /* White color for burger lines */
+}
+
+.custom-header .navbar-burger:hover {
+    color: #ffffff !important; /* White color for burger lines on hover */
+}
+
+
+
+.custom-header .navbar-menu {
+    background-color: #ffffff00 !important; /* Pink background color for the dropdown */
+}
 
 #usernameDisplay {
     font-size: 20px; /* Adjust the font size */
