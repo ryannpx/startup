@@ -1,54 +1,82 @@
-// Define an array of motivation phrases
-const motivationPhrases = [
-    "You've got this!", 
-    "Keep going!", 
-    "Stay strong.", 
-    "One step at a time.", 
-    "You're unstoppable.", 
-    "Believe in yourself.", 
-    "You're capable.", 
-    "Make it happen.", 
-    "Dream big.", 
-    "Never give up.", 
-    "Stay focused.", 
-    "Embrace the journey.", 
-    "You're a winner.", 
-    "Keep pushing forward.", 
-    "You can do it.", 
-    "Stay positive.", 
-    "Chase your dreams.", 
-    "Rise and grind.", 
-    "Push yourself.", 
-    "Be brave."
-];
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Get references to the cat image and motivation div
+//     const catImage = document.getElementById('cat-image');
+//     const motivationDiv = document.querySelector('.motivation');
 
-// Get references to the cat image and motivation div
-const catImage = document.getElementById('cat-image');
-const motivationDiv = document.querySelector('.motivation');
+//     // Event listener for clicking on the cat image
+//     catImage.addEventListener('click', function () {
+//         fetch('https://type.fit/api/quotes')
+//             .then(response => response.json())
+//             .then(data => {
+//                 // Extract the quote from the response data
+//                 const quote = data[0].q;
 
-// Variable to track the current image state (2 or 3)
-let currentImageState = 3; // Start with image 3
-
-// Event listener for clicking on the cat image
-document.addEventListener('DOMContentLoaded', function () {
-    // Event listeners for changing the image on hover
-    catImage.addEventListener('mouseover', function() {
-        // Change to the second picture when the mouse is over the image
-        catImage.src = 'resized.png';
-    });
-
-    catImage.addEventListener('mouseout', function() {
-        // Change back to the original picture when the mouse moves away from the image
-        catImage.src = 'Untitled_Artwork (3).png';
-    });
-
-    // Event listener for clicking on the motivation div
-    catImage.addEventListener('click', function() {
-        // Select a new random motivation phrase from the array
-        const randomIndex = Math.floor(Math.random() * motivationPhrases.length);
-        const randomPhrase = motivationPhrases[randomIndex];
-
-        // Update the text content of the motivation div with the new random phrase
-        motivationDiv.querySelector('p').textContent = randomPhrase;
-    });
-});
+//                 // Update the text content of the motivation div with the received quote
+//                 motivationDiv.querySelector('p').textContent = quote;
+//             })
+//             .catch(error => {
+//                 // Handle any errors that occur during the fetch request
+//                 console.error('Error fetching quote:', error);
+//             });
+//     });
+// });
+// function displayQuote() {
+//     fetch('https://type.fit/api/quotes')
+//       .then((response) => response.json())
+//       .then((data) => {
+//         const containerEl = document.querySelector('#quote');
+  
+//         const quoteEl = document.createElement('p');
+//         quoteEl.classList.add('quote');
+//         const authorEl = document.createElement('p');
+//         authorEl.classList.add('author');
+  
+//         quoteEl.textContent = data[0].q; // Extract quote from response data
+//         authorEl.textContent = data[0].a; // Extract author from response data
+  
+//         containerEl.appendChild(quoteEl);
+//         containerEl.appendChild(authorEl);
+//       });
+//   }
+  
+//   displayQuote(); // Invoke function to display a random quote when the page loads
+  
+function displayPicture() {
+    const random = Math.floor(Math.random() * 1000);
+    fetch(`https://picsum.photos/v2/list?page=${random}&limit=1`)
+      .then((response) => response.json())
+      .then((data) => {
+        const containerEl = document.querySelector('#picture');
+  
+        const width = containerEl.offsetWidth;
+        const height = containerEl.offsetHeight;
+  
+        const imgUrl = `https://picsum.photos/id/${data[0].id}/${width}/${height}?grayscale`;
+        const imgEl = document.createElement('img');
+        imgEl.setAttribute('src', imgUrl);
+        containerEl.appendChild(imgEl);
+      });
+  }
+  
+  function displayQuote(data) {
+    fetch('https://api.quotable.io/random')
+      .then((response) => response.json())
+      .then((data) => {
+        const containerEl = document.querySelector('#quote');
+  
+        const quoteEl = document.createElement('p');
+        quoteEl.classList.add('quote');
+        const authorEl = document.createElement('p');
+        authorEl.classList.add('author');
+  
+        quoteEl.textContent = data.content;
+        authorEl.textContent = data.author;
+  
+        containerEl.appendChild(quoteEl);
+        containerEl.appendChild(authorEl);
+      });
+  }
+  
+  displayPicture();
+  displayQuote();
+  

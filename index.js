@@ -1,48 +1,55 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const app = express();
 
-// Third party middleware - Cookies
-app.use(cookieParser());
+// Middleware to parse JSON body
+app.use(bodyParser.json());
 
-app.post('/cookie/:name/:value', (req, res, next) => {
-  res.cookie(req.params.name, req.params.value);
-  res.send({cookie: `${req.params.name}:${req.params.value}`});
+// In-memory database for simplicity (replace this with a real database in production)
+let users = [];
+
+// Endpoint to create a new user account
+app.post('/signup', (req, res) => {
+    const { username, password } = req.body;
+    // Check if username already exists
+    if (users.some(user => user.username === username)) {
+        return res.status(400).json({ message: 'Username already exists' });
+    }
+    // Create new user
+    const newUser = { username, password };
+    users.push(newUser);
+    res.status(201).json({ message: 'User created successfully' });
 });
 
-app.get('/cookie', (req, res, next) => {
-  res.send({cookie: req.cookies});
+// Endpoint to authenticate user login
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    const user = users.find(user => user.username === username && user.password === password);
+    if (!user) {
+        return res.status(401).json({ message: 'Invalid username or password' });
+    }
+    res.json({ message: 'Login successful' });
 });
 
-// Creating your own middleware - logging
-app.use((req, res, next) => {
-  console.log(req.originalUrl);
-  next();
+// Endpoint to logout user (clear session)
+app.post('/logout', (req, res) => {
+    // Perform logout actions here (e.g., clear session, remove token, etc.)
+    res.json({ message: 'Logout successful' });
 });
 
-// Built in middleware - Static file hosting
-app.use(express.static('public'));
-
-// Routing middleware
-app.get('/store/:storeName', (req, res) => {
-  res.send({name: req.params.storeName});
+// Endpoint to get user details
+app.get('/user', (req, res) => {
+    // Retrieve user details based on authentication (e.g., session, token)
+    const username = req.query.username; // Assuming username is sent as a query parameter
+    const user = users.find(user => user.username === username);
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+    res.json({ username: user.username }); // Return user details
 });
 
-app.put('/st*/:storeName', (req, res) => res.send({update: req.params.storeName}));
-
-app.delete(/\/store\/(.+)/, (req, res) => res.send({delete: req.params[0]}));
-
-// Error middleware
-app.get('/error', (req, res, next) => {
-  throw new Error('Trouble in river city');
-});
-
-app.use(function (err, req, res, next) {
-  res.status(500).send({type: err.name, message: err.message});
-});
-
-// Listening to a network port
+// Start the server
 const port = 3000;
-app.listen(port, function () {
-  console.log(`Listening on port ${port}`);
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
