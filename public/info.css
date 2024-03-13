@@ -87,3 +87,17 @@ body {
     color: #494949d0 !important; /* Red text color on hover */
 background-color: rgba(255, 255, 255, 0.752)  !important; /* White background color on hover */
 }
+
+.custom-header .navbar-burger {
+    color: #717171d0 !important; /* White color for burger lines */
+}
+
+.custom-header .navbar-burger:hover {
+    color: #606060 !important; /* White color for burger lines on hover */
+}
+
+
+
+.custom-header .navbar-menu {
+    background-color: #ffffff00 !important; /* Pink background color for the dropdown */
+}
