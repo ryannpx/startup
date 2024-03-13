@@ -84,7 +84,8 @@ html
 - javascript is single threaded
     - everything bust be asynchronous
  
-2/26
+3/11
+- production deployment
 - 
 
 
