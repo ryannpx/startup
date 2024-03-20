@@ -73,6 +73,26 @@ app.get('/quote', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch quote' });
     }
 });
+// Endpoint to save tasks for a user
+app.post('/tasks', (req, res) => {
+    const { username, tasks } = req.body;
+    const user = users.find(user => user.username === username);
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+    user.tasks = tasks; // Replace user's tasks with the provided tasks
+    res.json({ message: 'Tasks saved successfully' });
+});
+
+// Endpoint to retrieve tasks for a user
+app.get('/tasks', (req, res) => {
+    const username = req.query.username;
+    const user = users.find(user => user.username === username);
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+    res.json({ tasks: user.tasks });
+});
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
