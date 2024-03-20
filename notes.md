@@ -87,9 +87,14 @@ html
 3/11
 - production deployment
 - 
-
-
-
+3/18
+-login datebase
+- hashing passwords, the clear text is not store (ex : password ---> fjsldjfslk24325fjeiwjf)
+- salted hash passwords password --> saltyieurow: kdjfi34i3jlkfjlsdfjg
+- Bcrypt does salt, hash, and compare
+- authentication uuid
+- token for user, random string stored in database uuid (const uuid = require('uuid')
+- cookies: things that happened previous sessions with the client
 
 
 
@@ -102,4 +107,4 @@ html
 
 ### how to deploy
 nav to startup 
-./deployFiles.sh -k /Users/ryann/Desktop/260/260keypair/cs260startup.pem -h porostudy.com -s startup
+./deployFiles.sh -k /Users/ryann/[keypairdestination including keypair] -h porostudy.com -s startup
