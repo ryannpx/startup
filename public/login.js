@@ -1,9 +1,9 @@
 
 
 (async () => {
-    const userName = localStorage.getItem('username');
-    if (userName) {
-      document.querySelector('#playerName').textContent = userName;
+    const username = localStorage.getItem('username');
+    if (username) {
+      document.querySelector('#playerName').textContent = username;
       setDisplay('loginControls', 'none');
       setDisplay('playControls', 'block');
     } else {
@@ -20,28 +20,46 @@
     loginOrCreate(`/api/auth/create`);
   }
   
-  async function loginOrCreate(endpoint) {
-    const userName = document.querySelector('#username')?.value;
-    const password = document.querySelector('#password')?.value;
-    const response = await fetch(endpoint, {
-      method: 'post',
-      body: JSON.stringify({ email: userName, password: password }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
+  // async function loginOrCreate(endpoint) {
+
+
+  async function loginOrCreate() {
+    const email = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const response = await fetch('http://localhost:4000/api/auth/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
     });
-  
+
     if (response.ok) {
-      localStorage.setItem('username', username);
-      window.location.href = 'home.html';
+        localStorage.setItem('username', username);
+        window.location.href = 'home.html';
     } else {
-      const body = await response.json();
-      const modalEl = document.querySelector('#msgModal');
-      modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
-      const msgModal = new bootstrap.Modal(modalEl, {});
-      msgModal.show();
+        const body = await response.json();
+        if (response.status === 401) {
+            // User unauthorized
+            const errorMsg = document.getElementById('error-message');
+            if (errorMsg) {
+                errorMsg.textContent = 'User does not exist or invalid credentials';
+            }
+        } else {
+            // Show error message from the server response
+            const modalEl = document.querySelector('#msgModal');
+            modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
+            const msgModal = new bootstrap.Modal(modalEl, {});
+            msgModal.show();
+        }
     }
-  }
+}
+
+async function loginUser() {
+    await loginOrCreate();
+}
+
+
   
   function play() {
     window.location.href = 'play.html';
