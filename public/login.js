@@ -65,9 +65,12 @@
 
 
 async function loginUser() {
-    await loginOrCreate();
+  await loginOrCreate('/api/auth/login'); // Pass the login endpoint
 }
 
+async function createUser() {
+  await loginOrCreate('/api/auth/create'); // Pass the create endpoint
+}
 
   
   function play() {
