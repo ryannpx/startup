@@ -96,6 +96,7 @@ html
 - token for user, random string stored in database uuid (const uuid = require('uuid')
 - cookies: things that happened previous sessions with the client
 
+3/20
 
 
 
