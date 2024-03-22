@@ -10,7 +10,8 @@ const collection = db.collection('user');
 
 app.use(express.json());
 
-const connectionString = 'mongodb+srv://cs260:Mge23545!mongo@ryann.tqxoeol.mongodb.net/?retryWrites=true&w=majority&appName=Ryann';
+const connectionString = 'mongodb+srv://cs260:Mge23545%21mongo@ryann.tqxoeol.mongodb.net/?retryWrites=true&w=majority&appName=Ryann';
+
 mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to MongoDB');

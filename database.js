@@ -12,7 +12,7 @@ const url = `mongodb+srv://cs260:Mge23545%21mongo@ryann.tqxoeol.mongodb.net`;
 // const connect = mongoose.connect("mongodb://localhost:27017/startup");
 //
 
-const connectionString = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+const connectionString = 'mongodb+srv://cs260:Mge23545%21mongo@ryann.tqxoeol.mongodb.net/?retryWrites=true&w=majority&appName=Ryann';
 
 mongoose.connect(connectionString)
   .then(() => {
