@@ -2,49 +2,66 @@ const { MongoClient } = require('mongodb');
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
 const config = require('./dbConfig.json');
-const mongoose = require("mongoose");
-const url = `mongodb+srv://cs260:Mge23545%21mongo@ryann.tqxoeol.mongodb.net`; 
-//const db = client.db('startup');//
-//
-// const userCollection = db.collection('users');
-// const taskCollection = db.collection('tasks');
-//
-// const connect = mongoose.connect("mongodb://localhost:27017/startup");
-//
 
-const connectionString = 'mongodb+srv://cs260:Mge23545%21mongo@ryann.tqxoeol.mongodb.net/?retryWrites=true&w=majority&appName=Ryann';
+const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+const client = new MongoClient(url);
+const db = client.db('startup');
+const userCollection = db.collection('user');
+const scoreCollection = db.collection('task');
 
-mongoose.connect(connectionString)
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
-
-
-// connect.then(() =>{
-//     console.log("databse connected successfully");
-// })
-
-// .catch(() =>{
-//     console.log("databse cannot be connected");
-// });
-
-//create a schema
-const LoginSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        requried: true
-    },
-    password: {
-        type: String,
-        requried: true
-    }
+// This will asynchronously test the connection and exit the process if it fails
+(async function testConnection() {
+  await client.connect();
+  await db.command({ ping: 1 });
+})().catch((ex) => {
+  console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+  process.exit(1);
 });
-//collection part
-const collection= new mongoose.model("user", LoginSchema);
-module.exports = collection;
+
+function getUser(email) {
+  return userCollection.findOne({ email: email });
+}
+
+function getUserByToken(token) {
+  return userCollection.findOne({ token: token });
+}
+
+async function createUser(email, password) {
+  // Hash the password before we insert it into the database
+  const passwordHash = await bcrypt.hash(password, 10);
+
+  const user = {
+    email: email,
+    password: passwordHash,
+    token: uuid.v4(),
+  };
+  await userCollection.insertOne(user);
+
+  return user;
+}
+
+function addTask(task) {
+  scoreCollection.insertOne(task);
+}
+
+// function getHighScores() {
+//   const query = { score: { $gt: 0, $lt: 900 } };
+//   const options = {
+//     sort: { score: -1 },
+//     limit: 10,
+//   };
+//   const cursor = scoreCollection.find(query, options);
+//   return cursor.toArray();
+// }
+
+module.exports = {
+  getUser,
+  getUserByToken,
+  createUser,
+  addTask,
+  //getHighScores,
+};
+
 
 
 
