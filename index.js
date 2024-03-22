@@ -112,18 +112,68 @@ app.get('/quote', async (req, res) => {
     }
 });
 // GetScores
-secureApiRouter.get('/tasks', async (req, res) => {
-  const scores = await DB.getHighScores();
-  res.send(scores);
+// secureApiRouter.get('/tasks', async (req, res) => {
+//   const tasks = await DB.getHighScores();
+//   res.send(tasks);
+// });
+
+// // SubmitScore
+// secureApiRouter.post('/task', async (req, res) => {
+//   const score = { ...req.body, ip: req.ip };
+//   await DB.addScore(score);
+//   const scores = await DB.getHighScores();
+//   res.send(scores);
+// });
+
+
+// // Endpoint to save tasks for a user
+// app.post('/tasks', (req, res) => {
+//     const { username, tasks } = req.body;
+//     const user = users.find(user => user.username === username);
+//     if (!user) {
+//         return res.status(404).json({ message: 'User not found' });
+//     }
+//     user.tasks = tasks; // Replace user's tasks with the provided tasks
+//     res.json({ message: 'Tasks saved successfully' });
+// });
+
+// // Endpoint to retrieve tasks for a user
+// app.get('/tasks', (req, res) => {
+//     const username = req.query.username;
+//     const user = users.find(user => user.username === username);
+//     if (!user) {
+//         return res.status(404).json({ message: 'User not found' });
+//     }
+//     res.json({ tasks: user.tasks });
+// });
+
+// Endpoint to save tasks for a user
+app.post('/tasks', async (req, res) => {
+    const { userEmail, tasks } = req.body;
+    try {
+        await DB.saveTasksForUser(userEmail, tasks);
+        res.json({ message: 'Tasks saved successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to save tasks' });
+    }
 });
 
-// SubmitScore
-secureApiRouter.post('/task', async (req, res) => {
-  const score = { ...req.body, ip: req.ip };
-  await DB.addScore(score);
-  const scores = await DB.getHighScores();
-  res.send(scores);
+// Endpoint to retrieve tasks for a user
+app.get('/tasks', async (req, res) => {
+    const userEmail = req.query.userEmail;
+    try {
+        const tasks = await DB.getTasksForUser(userEmail);
+        if (tasks !== null) {
+            res.json({ tasks: tasks });
+        } else {
+            res.status(404).json({ message: 'User tasks not found' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to retrieve tasks' });
+    }
 });
+
+
 
 // Default error handler
 app.use(function (err, req, res, next) {
@@ -152,6 +202,8 @@ const port = 4000;
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+
+module.exports = app;
 
 
 

@@ -7,7 +7,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('user');
-const scoreCollection = db.collection('task');
+const taskCollection = db.collection('task');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -18,8 +18,8 @@ const scoreCollection = db.collection('task');
   process.exit(1);
 });
 
-function getUser(email) {
-  return userCollection.findOne({ email: email });
+function getUser(user) {
+  return userCollection.findOne({ user: user });
 }
 
 function getUserByToken(token) {
@@ -40,26 +40,41 @@ async function createUser(email, password) {
   return user;
 }
 
-function addTask(task) {
-  scoreCollection.insertOne(task);
+async function saveTasksForUser(username, tasks) {
+    try {
+        // Update or insert tasks for the user in the database
+        const result = await userCollection.updateOne(
+            { username: username }, // Filter by user's username
+            { $set: { tasks: tasks } }, // Set or update the tasks
+            { upsert: true } // Create a new document if it doesn't exist
+        );
+        console.log('Tasks saved for user:', username);
+        return result.modifiedCount; // Return the number of modified documents
+    } catch (error) {
+        console.error('Error saving tasks for user:', username, error);
+        throw error; // Throw the error for handling in the calling function
+    }
 }
 
-// function getHighScores() {
-//   const query = { score: { $gt: 0, $lt: 900 } };
-//   const options = {
-//     sort: { score: -1 },
-//     limit: 10,
-//   };
-//   const cursor = scoreCollection.find(query, options);
-//   return cursor.toArray();
-// }
+async function getTasksForUser(username) {
+    try {
+        // Find tasks for the user in the database
+        const userTasks = await userCollection.findOne({ username: username });
+        return userTasks ? userTasks.tasks : null; // Return the tasks if found, otherwise return null
+    } catch (error) {
+        console.error('Error retrieving tasks for user:', username, error);
+        throw error; // Throw the error for handling in the calling function
+    }
+}
+
+
 
 module.exports = {
   getUser,
   getUserByToken,
   createUser,
-  addTask,
-  //getHighScores,
+  saveTasksForUser,
+  getTasksForUser,
 };
 
 
@@ -70,89 +85,5 @@ module.exports = {
 
 
 
-// // Connect to the MongoDB server and initialize collections
-// async function connectDatabase() {
-//     try {
-//         await client.connect();
-//         db = client.db(config.database);
-//         console.log('Connected to MongoDB');
-//     } catch (error) {
-//         console.error('Error connecting to MongoDB:', error);
-//         process.exit(1);
-//     }
-// }
 
-// // Initialize collections
-// function initializeCollections() {
-//     if (!db) {
-//         console.error('Database is not connected');
-//         process.exit(1);
-//     }
-//     db.createCollection('users');
-//     db.createCollection('tasks');
-//     console.log('Collections initialized');
-// }
-
-// // Function to create a new user in the database
-// async function createUser(username, password) {
-//     const user = {
-//         username: username,
-//         password: password
-//     };
-//     try {
-//         const result = await db.collection('users').insertOne(user);
-//         console.log('User created:', result.insertedId);
-//         return result.insertedId;
-//     } catch (error) {
-//         console.error('Error creating user:', error);
-//         throw error;
-//     }
-// }
-
-// // Function to retrieve a user from the database by username
-// async function getUser(username) {
-//     try {
-//         const user = await db.collection('users').findOne({ username: username });
-//         return user;
-//     } catch (error) {
-//         console.error('Error retrieving user:', error);
-//         throw error;
-//     }
-// }
-
-// // Function to create or update tasks for a user
-// async function updateTasks(username, tasks) {
-//     try {
-//         const result = await db.collection('tasks').updateOne(
-//             { username: username },
-//             { $set: { tasks: tasks } },
-//             { upsert: true }
-//         );
-//         console.log('Tasks updated:', result.modifiedCount);
-//         return result.modifiedCount;
-//     } catch (error) {
-//         console.error('Error updating tasks:', error);
-//         throw error;
-//     }
-// }
-
-// // Function to retrieve tasks for a user
-// async function getTasks(username) {
-//     try {
-//         const userTasks = await db.collection('tasks').findOne({ username: username });
-//         return userTasks ? userTasks.tasks : null;
-//     } catch (error) {
-//         console.error('Error retrieving tasks:', error);
-//         throw error;
-//     }
-// }
-
-// module.exports = {
-//     connectDatabase,
-//     initializeCollections,
-//     createUser,
-//     getUser,
-//     updateTasks,
-//     getTasks
-// };
 

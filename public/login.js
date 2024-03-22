@@ -3,7 +3,7 @@
 (async () => {
     const username = localStorage.getItem('username');
     if (username) {
-      document.querySelector('#playerName').textContent = username;
+      document.querySelector('#username').textContent = username;
       setDisplay('loginControls', 'none');
       setDisplay('playControls', 'block');
     } else {
@@ -73,18 +73,7 @@
 
 
 
-async function loginUser() {
-  await loginOrCreate('/api/auth/login'); // Pass the login endpoint
-}
 
-async function createUser() {
-  await loginOrCreate('/api/auth/create'); // Pass the create endpoint
-}
-
-  
-  function play() {
-    window.location.href = 'play.html';
-  }
   
   document.addEventListener('DOMContentLoaded', function() {
     const username = localStorage.getItem('username');
