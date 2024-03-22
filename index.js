@@ -26,20 +26,23 @@ var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // CreateAuth token for a new user
+// CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
-  if (await DB.getUser(req.body.email)) {
-    res.status(409).send({ msg: 'Existing user' });
-  } else {
-    const user = await DB.createUser(req.body.email, req.body.password);
-
-    // Set the cookie
-    setAuthCookie(res, user.token);
-
-    res.send({
-      id: user._id,
-    });
-  }
-});
+    const existingUser = await DB.getUser(req.body.email);
+    if (existingUser) {
+      res.status(409).send({ msg: 'User already exists' });
+    } else {
+      const user = await DB.createUser(req.body.email, req.body.password);
+  
+      // Set the cookie
+      setAuthCookie(res, user.token);
+  
+      res.send({
+        id: user._id,
+      });
+    }
+  });
+  
 
 // GetAuth token for the provided credentials
 apiRouter.post('/auth/login', async (req, res) => {

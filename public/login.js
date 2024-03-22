@@ -23,10 +23,10 @@
   // async function loginOrCreate(endpoint) {
 
 
-  async function loginOrCreate() {
+  async function loginOrCreate(endpoint) {
     const email = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    const response = await fetch('http://localhost:4000/api/auth/login', {
+    const response = await fetch(`http://localhost:4000${endpoint}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -35,6 +35,8 @@
     });
 
     if (response.ok) {
+        // Handle successful login or user creation
+        const username = await response.json(); // Assuming backend sends username upon successful login/creation
         localStorage.setItem('username', username);
         window.location.href = 'home.html';
     } else {
@@ -45,6 +47,12 @@
             if (errorMsg) {
                 errorMsg.textContent = 'User does not exist or invalid credentials';
             }
+        } else if (response.status === 409) {
+            // User already exists (conflict)
+            const errorMsg = document.getElementById('error-message');
+            if (errorMsg) {
+                errorMsg.textContent = 'User already exists';
+            }
         } else {
             // Show error message from the server response
             const modalEl = document.querySelector('#msgModal');
@@ -54,6 +62,7 @@
         }
     }
 }
+
 
 async function loginUser() {
     await loginOrCreate();
