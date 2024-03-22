@@ -58,11 +58,11 @@ apiRouter.post('/auth/login', async (req, res) => {
 });
 
 // DeleteAuth token if stored in cookie
-apiRouter.delete('/auth/logout', (_req, res) => {
-  res.clearCookie(authCookieName);
-  res.status(204).end();
-});
-
+apiRouter.delete('/api/auth/logout', (_req, res) => {
+    res.clearCookie(authCookieName);
+    res.status(204).end();
+  });
+  
 // GetUser returns information about a user
 apiRouter.get('/user/:email', async (req, res) => {
   const user = await DB.getUser(req.params.email);

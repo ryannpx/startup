@@ -36,9 +36,16 @@
 
     if (response.ok) {
         // Handle successful login or user creation
-        const username = await response.json(); // Assuming backend sends username upon successful login/creation
-        localStorage.setItem('username', username);
-        window.location.href = 'home.html';
+        try {
+            const data = await response.json();
+            const username = data.username; // Assuming the response contains the username
+            localStorage.setItem('username', username);
+            window.location.href = 'home.html';
+        } catch (error) {
+            console.error('Error parsing JSON data:', error);
+            // Handle the case where JSON parsing fails
+            // Display a generic error message or take appropriate action
+        }
     } else {
         const body = await response.json();
         if (response.status === 401) {
@@ -64,6 +71,8 @@
 }
 
 
+
+
 async function loginUser() {
   await loginOrCreate('/api/auth/login'); // Pass the login endpoint
 }
@@ -77,12 +86,33 @@ async function createUser() {
     window.location.href = 'play.html';
   }
   
-  function logout() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const username = localStorage.getItem('username');
+    const logoutLink = document.getElementById('logoutLink');
+    if (username) {
+        // User is logged in, show logout link
+        logoutLink.style.display = 'block';
+    } else {
+        // User is not logged in, hide logout link
+        logoutLink.style.display = 'none';
+    }
+});
+
+function logout() {
     localStorage.removeItem('username');
     fetch(`/api/auth/logout`, {
-      method: 'delete',
-    }).then(() => (window.location.href = '/'));
-  }
+        method: 'DELETE',
+    })
+    .then(() => {
+        // Redirect to the login page after logout
+        window.location.href = 'index.html';
+    })
+    .catch(error => {
+        console.error('Error logging out:', error);
+        // Handle logout error if needed
+    });
+}
+
   
   async function getUser(email) {
     let scores = [];
