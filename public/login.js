@@ -25,8 +25,9 @@
 
   async function loginOrCreate(endpoint) {
     const email = document.getElementById('username').value;
+    console.log(email);
     const password = document.getElementById('password').value;
-    const response = await fetch(`http://localhost:4000${endpoint}`, {
+    const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -38,7 +39,7 @@
         // Handle successful login or user creation
         try {
             const data = await response.json();
-            const username = data.username; // Assuming the response contains the username
+            const username = email; // Assuming the response contains the username
             localStorage.setItem('username', username);
             window.location.href = 'home.html';
         } catch (error) {
