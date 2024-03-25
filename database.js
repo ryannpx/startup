@@ -19,7 +19,7 @@ const taskCollection = db.collection('usertasks');
 });
 
 function getUser(user) {
-  return userCollection.findOne({ user: user });
+  return userCollection.findOne({ email: user });
 }
 
 function getUserByToken(token) {
