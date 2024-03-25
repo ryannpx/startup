@@ -76,3 +76,13 @@ For this deliverable I created an HTTP Service using node and express
 - To do list: Made endpoints for my to do list to take and save users own tasks, right now I kept local storage for demo purposes though.
 - Updated some JS, burger now works when screen is made smaller, havent fixed all of the CSS yet to restyle there yet.
 - Timer works a little differently now
+# Login Deliverable
+For this deliverable I made a working login seervice
+- Connected to my atlas database
+- Endpoints for adding, updating, and deleting data
+- Keeps data in MongoDB
+- Displays the users name above the stop clock
+- Allows new creating accounds
+- Encripted credentials are stoed
+- Existing users can log in
+- Can authenticate users, will not go into home until authenticated
