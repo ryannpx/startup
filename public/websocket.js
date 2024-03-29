@@ -32,7 +32,7 @@ function sendMessageToServer(message) {
 // Event listener for the send button
 document.getElementById('sendButton').addEventListener('click', function() {
     const messageInput = document.getElementById('message-input').value.trim();
-    const username = "User"; // Replace "User" with actual user's name
+    // const username = "User"; // Replace "User" with actual user's name
     const fullMessage = `${username}: ${messageInput}`;
     sendMessageToServer(fullMessage); // Send message to server
     document.getElementById('message-input').value = ''; // Clear input field
