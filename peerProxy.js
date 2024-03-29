@@ -4,7 +4,7 @@
 
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ port: 3000 });
+const wss = new WebSocket.Server({ port: 4000 });
 
 // Event listener for WebSocket connections
 wss.on('connection', function connection(ws) {
