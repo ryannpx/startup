@@ -1,7 +1,7 @@
 
 
 // Establish WebSocket connection
-const socket = new WebSocket('ws://localhost:4000');
+const socket = new WebSocket('ws://localhost:3000');
 
 // Event listener for WebSocket open
 socket.addEventListener('open', function (event) {
