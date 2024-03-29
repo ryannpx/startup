@@ -94,3 +94,5 @@ For this deliverable I made a chatbox with websocket!
 - Displays 4 messages at a time
 - Displays the users name before the message
 - Users can chat back and forth with one another
+- Added endpoints for the websocket
+- Fixed some spacing issues on the chatbox
