@@ -67,6 +67,67 @@
 
 // websocket.js
 
+
+
+
+
+
+
+
+
+
+// // Establish WebSocket connection
+// const socket = new WebSocket('ws://localhost:3000');
+
+// // Event listener for WebSocket open
+// socket.addEventListener('open', function (event) {
+//     console.log('WebSocket connection established');
+// });
+
+// // Event listener for WebSocket messages
+// socket.addEventListener('message', function (event) {
+//     const message = event.data;
+//     displayMessage(message);
+// });
+
+// // Function to send message to server
+// function sendMessage() {
+//     const messageInput = document.getElementById('message-input').value.trim();
+//     if (messageInput !== '') {
+//         const userName = "User"; // Replace "User" with actual user's name
+//         const fullMessage = `${userName}: ${messageInput}`;
+//         socket.send(fullMessage);
+//         // Clear input field
+//         document.getElementById('message-input').value = '';
+//     }
+// }
+
+// // Event listener for the send button
+// document.getElementById('sendButton').addEventListener('click', sendMessage);
+
+// // Event listener for pressing Enter key in the input field
+// document.getElementById('message-input').addEventListener('keypress', function(event) {
+//     if (event.keyCode === 13) {
+//         event.preventDefault();
+//         sendMessage();
+//     }
+// });
+
+// // Function to display a message in the chat
+// function displayMessage(message) {
+//     const websocketPlaceholder = document.getElementById('websocket-placeholder');
+//     const messageElement = document.createElement('p');
+//     messageElement.textContent = message;
+
+//     // Check if there are already 4 messages displayed
+//     if (websocketPlaceholder.children.length >= 4) {
+//         websocketPlaceholder.removeChild(websocketPlaceholder.children[0]);
+//     }
+
+//     websocketPlaceholder.appendChild(messageElement);
+// }
+
+
 // Establish WebSocket connection
 const socket = new WebSocket('ws://localhost:3000');
 
@@ -78,29 +139,38 @@ socket.addEventListener('open', function (event) {
 // Event listener for WebSocket messages
 socket.addEventListener('message', function (event) {
     const message = event.data;
-    displayMessage(message);
+    storeMessageLocally(message); // Store the received message locally
+    displayMessage(message); // Display the received message
 });
 
+// Function to store a new message locally
+function storeMessageLocally(message) {
+    const storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+    storedMessages.push(message);
+    localStorage.setItem('chatMessages', JSON.stringify(storedMessages));
+}
+
 // Function to send message to server
-function sendMessage() {
-    const messageInput = document.getElementById('message-input').value.trim();
-    if (messageInput !== '') {
-        const userName = "User"; // Replace "User" with actual user's name
-        const fullMessage = `${userName}: ${messageInput}`;
-        socket.send(fullMessage);
-        // Clear input field
-        document.getElementById('message-input').value = '';
+function sendMessageToServer(message) {
+    if (message !== '') {
+        socket.send(message);
     }
 }
 
 // Event listener for the send button
-document.getElementById('sendButton').addEventListener('click', sendMessage);
+document.getElementById('sendButton').addEventListener('click', function() {
+    const messageInput = document.getElementById('message-input').value.trim();
+    const userName = "User"; // Replace "User" with actual user's name
+    const fullMessage = `${userName}: ${messageInput}`;
+    sendMessageToServer(fullMessage); // Send message to server
+    document.getElementById('message-input').value = ''; // Clear input field
+});
 
 // Event listener for pressing Enter key in the input field
 document.getElementById('message-input').addEventListener('keypress', function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        sendMessage();
+        document.getElementById('sendButton').click(); // Trigger click event on send button
     }
 });
 
@@ -112,11 +182,28 @@ function displayMessage(message) {
 
     // Check if there are already 4 messages displayed
     if (websocketPlaceholder.children.length >= 4) {
+        // Remove the top (oldest) message
         websocketPlaceholder.removeChild(websocketPlaceholder.children[0]);
     }
 
+    // Append the new message to the bottom
     websocketPlaceholder.appendChild(messageElement);
 }
 
+// Function to retrieve messages from local storage and display them
+function displayStoredMessages() {
+    const storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+    const websocketPlaceholder = document.getElementById('websocket-placeholder');
+    websocketPlaceholder.innerHTML = ''; // Clear existing messages
+
+    storedMessages.forEach(message => {
+        const messageElement = document.createElement('p');
+        messageElement.textContent = message;
+        websocketPlaceholder.appendChild(messageElement);
+    });
+}
+
+// Display stored messages when the page loads
+document.addEventListener('DOMContentLoaded', displayStoredMessages);
 
 
