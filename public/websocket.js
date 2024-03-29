@@ -160,8 +160,8 @@ function sendMessageToServer(message) {
 // Event listener for the send button
 document.getElementById('sendButton').addEventListener('click', function() {
     const messageInput = document.getElementById('message-input').value.trim();
-    const userName = "User"; // Replace "User" with actual user's name
-    const fullMessage = `${userName}: ${messageInput}`;
+    const username = "User"; // Replace "User" with actual user's name
+    const fullMessage = `${username}: ${messageInput}`;
     sendMessageToServer(fullMessage); // Send message to server
     document.getElementById('message-input').value = ''; // Clear input field
 });
@@ -180,28 +180,29 @@ function displayMessage(message) {
     const messageElement = document.createElement('p');
     messageElement.textContent = message;
 
-    // Check if there are already 4 messages displayed
-    if (websocketPlaceholder.children.length >= 4) {
-        // Remove the top (oldest) message
-        websocketPlaceholder.removeChild(websocketPlaceholder.children[0]);
-    }
+ 
 
     // Append the new message to the bottom
     websocketPlaceholder.appendChild(messageElement);
 }
 
-// Function to retrieve messages from local storage and display them
+// Function to retrieve messages from local storage and display the last four messages
 function displayStoredMessages() {
     const storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
     const websocketPlaceholder = document.getElementById('websocket-placeholder');
     websocketPlaceholder.innerHTML = ''; // Clear existing messages
 
-    storedMessages.forEach(message => {
+    // Determine the starting index for displaying messages
+    const startIndex = Math.max(0, storedMessages.length - 4);
+
+    // Iterate over the last four messages and display them
+    for (let i = startIndex; i < storedMessages.length; i++) {
         const messageElement = document.createElement('p');
-        messageElement.textContent = message;
+        messageElement.textContent = storedMessages[i];
         websocketPlaceholder.appendChild(messageElement);
-    });
+    }
 }
+
 
 // Display stored messages when the page loads
 document.addEventListener('DOMContentLoaded', displayStoredMessages);
