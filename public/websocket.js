@@ -174,17 +174,22 @@ document.getElementById('message-input').addEventListener('keypress', function(e
     }
 });
 
-// Function to display a message in the chat
+// Function to display a message in the chat, limited to a maximum of four messages
 function displayMessage(message) {
     const websocketPlaceholder = document.getElementById('websocket-placeholder');
+
+    // Check if there are already four messages displayed
+    if (websocketPlaceholder.children.length >= 4) {
+        // Remove the top (oldest) message
+        websocketPlaceholder.removeChild(websocketPlaceholder.children[0]);
+    }
+
+    // Create a new message element and append it to the bottom
     const messageElement = document.createElement('p');
     messageElement.textContent = message;
-
- 
-
-    // Append the new message to the bottom
     websocketPlaceholder.appendChild(messageElement);
 }
+
 
 // Function to retrieve messages from local storage and display the last four messages
 function displayStoredMessages() {
