@@ -1,6 +1,8 @@
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const express = require('express');
+const http = require('http'); // Import the HTTP module
+const WebSocket = require('ws'); // Import the WebSocket module
 const app = express();
 const DB = require('./database.js');
 
@@ -111,41 +113,7 @@ app.get('/quote', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch quote' });
     }
 });
-// GetScores
-// secureApiRouter.get('/tasks', async (req, res) => {
-//   const tasks = await DB.getHighScores();
-//   res.send(tasks);
-// });
 
-// // SubmitScore
-// secureApiRouter.post('/task', async (req, res) => {
-//   const score = { ...req.body, ip: req.ip };
-//   await DB.addScore(score);
-//   const scores = await DB.getHighScores();
-//   res.send(scores);
-// });
-
-
-// // Endpoint to save tasks for a user
-// app.post('/tasks', (req, res) => {
-//     const { username, tasks } = req.body;
-//     const user = users.find(user => user.username === username);
-//     if (!user) {
-//         return res.status(404).json({ message: 'User not found' });
-//     }
-//     user.tasks = tasks; // Replace user's tasks with the provided tasks
-//     res.json({ message: 'Tasks saved successfully' });
-// });
-
-// // Endpoint to retrieve tasks for a user
-// app.get('/tasks', (req, res) => {
-//     const username = req.query.username;
-//     const user = users.find(user => user.username === username);
-//     if (!user) {
-//         return res.status(404).json({ message: 'User not found' });
-//     }
-//     res.json({ tasks: user.tasks });
-// });
 
 // Endpoint to save tasks for a user
 app.post('/tasks', async (req, res) => {
@@ -171,6 +139,35 @@ app.get('/tasks', async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: 'Failed to retrieve tasks' });
     }
+});
+
+
+// Create HTTP server using Express app
+const server = http.createServer(app);
+
+// WebSocket server setup
+const wss = new WebSocket.Server({ server });
+
+// WebSocket connection handler
+wss.on('connection', function connection(ws) {
+    console.log('WebSocket connection established');
+
+    // Event listener for receiving messages from clients
+    ws.on('message', function incoming(message) {
+        console.log('Received:', message);
+        
+        // Broadcast the message to all connected clients
+        wss.clients.forEach(function each(client) {
+            if (client !== ws && client.readyState === WebSocket.OPEN) {
+                client.send(message);
+            }
+        });
+    });
+
+    // Event listener for WebSocket disconnection
+    ws.on('close', function close() {
+        console.log('WebSocket connection closed');
+    });
 });
 
 
@@ -207,185 +204,4 @@ module.exports = app;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ///BACKEND
-// const express = require('express');
-// const path = require('path');
-// const bycrpt = require("bcrypt");
-// const bodyParser = require('body-parser');
-// const app = express();
-// const DB = require('./database.js');
-// const collection = require('./database');
-// // Middleware to parse JSON body
-
-// //convert data into json format
-// app.use(express.json());
-// app.use(express.urlencoded({extended:false}));
-
-
-// app.use(express.static('public'));
-// // Serve static files from the 'public' directory
-// app.use(express.static(path.join(__dirname, 'public')));
-
-
-
-
-
-
-
-// //endpoints
-
-
-
-// //app.use(bodyParser.json());
-// app.use(express.json());
-// // In-memory database for simplicity (replace this with a real database in production)
-// let users = [];
-
-// // Endpoint to create a new user account
-// app.post('/signup', (req, res) => {
-//     const { username, password } = req.body;
-//     // Check if username already exists
-//     if (users.some(user => user.username === username)) {
-//         return res.status(400).json({ message: 'Username already exists' });
-//     }
-//     // Create new user
-//     const newUser = { username, password };
-//     users.push(newUser);
-//     res.status(201).json({ message: 'User created successfully' });
-// });
-
-// // Endpoint to authenticate user login
-// app.post('/login', (req, res) => {
-//     const { username, password } = req.body;
-//     const user = users.find(user => user.username === username && user.password === password);
-//     if (!user) {
-//         return res.status(401).json({ message: 'Invalid username or password' });
-//     }
-//     res.json({ message: 'Login successful' });
-// });
-
-// // Endpoint to logout user (clear session)
-// app.post('/logout', (req, res) => {
-//     // Perform logout actions here (e.g., clear session, remove token, etc.)
-//     res.json({ message: 'Logout successful' });
-// });
-
-// // Endpoint to get user details
-// app.get('/user', (req, res) => {
-//     // Retrieve user details based on authentication (e.g., session, token)
-//     const username = req.query.username; // Assuming username is sent as a query parameter
-//     const user = users.find(user => user.username === username);
-//     if (!user) {
-//         return res.status(404).json({ message: 'User not found' });
-//     }
-//     res.json({ username: user.username }); // Return user details
-// });
-
-
-// // Endpoint to save tasks for a user
-// app.post('/tasks', (req, res) => {
-//     const { username, tasks } = req.body;
-//     const user = users.find(user => user.username === username);
-//     if (!user) {
-//         return res.status(404).json({ message: 'User not found' });
-//     }
-//     user.tasks = tasks; // Replace user's tasks with the provided tasks
-//     res.json({ message: 'Tasks saved successfully' });
-// });
-
-// // Endpoint to retrieve tasks for a user
-// app.get('/tasks', (req, res) => {
-//     const username = req.query.username;
-//     const user = users.find(user => user.username === username);
-//     if (!user) {
-//         return res.status(404).json({ message: 'User not found' });
-//     }
-//     res.json({ tasks: user.tasks });
-// });
-
-// //Serve static files from the 'public' directory
-
-
-// app.use(express.static('public'));
-
-// // Start the server
-// const port = 4000;
-// app.listen(port, () => {
-//     console.log(`Server is running on http://localhost:${port}`);
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Define your routes
-// app.get("/", (req, res) => {
-//     // Since index.html is in the 'public' directory, it will be served automatically
-//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-// });
-
-// //register user
-// app.post("/signup", async (req, res) => {
-//     try {
-//         const userData = {
-//             name: req.body.username,
-//             password: req.body.password
-//         };
-        
-//         const newUser = await collection.create(userData);
-//         console.log("User created:", newUser);
-        
-//         res.status(201).json({ message: "User created successfully" });
-//     } catch (error) {
-//         console.error("Error creating user:", error);
-//         res.status(500).json({ error: "Internal server error" });
-//     }
-// });
-
-//video stuff ^^
 
