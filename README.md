@@ -86,3 +86,11 @@ For this deliverable I made a working login seervice
 - Encripted credentials are stoed
 - Existing users can log in
 - Can authenticate users, will not go into home until authenticated
+# Websocket Deliverable
+For this deliverable I made a chatbox with websocket!
+- Listens to requests on the backend
+- Connects on the frontend
+- Stores messages in both database and local storage to save all the messages
+- Displays 4 messages at a time
+- Displays the users name before the message
+- Users can chat back and forth with one another
