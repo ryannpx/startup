@@ -55,6 +55,8 @@ function storeMessageLocally(message) {
 function sendMessageToServer(message) {
     if (webSocket && webSocket.readyState === WebSocket.OPEN) {
         webSocket.send(message);
+        displayMessage(message); // Call displayMessage after sending the message
+
     } else {
         console.error('WebSocket connection not open.');
     }
