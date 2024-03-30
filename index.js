@@ -1,8 +1,8 @@
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const express = require('express');
-//const http = require('http'); // Import the HTTP module
-//const WebSocket = require('ws'); // Import the WebSocket module
+const http = require('http'); // Import the HTTP module
+const WebSocket = require('ws'); // Import the WebSocket module
 const app = express();
 const DB = require('./database.js');
 const { peerProxy } = require('./peerProxy.js');
@@ -143,8 +143,8 @@ app.get('/tasks', async (req, res) => {
 });
 
 
-// Create HTTP server using Express app
-//const server = http.createServer(app);
+// // Create HTTP server using Express app
+// const server = http.createServer(app);
 
 // // WebSocket server setup
 // const wss = new WebSocket.Server({ server });
@@ -170,10 +170,28 @@ app.get('/tasks', async (req, res) => {
 //         console.log('WebSocket connection closed');
 //     });
 // });
+// app.post('/api/messages', async (req, res) => {
+//   const message = req.body.message;
+//   try {
+//       const result = await DB.collection('messages').insertOne({ message });
+//       console.log('Message stored in database:', message);
+//       // Broadcast the message to all connected WebSocket clients
+//       wss.clients.forEach(client => {
+//           if (client.readyState === WebSocket.OPEN) {
+//               client.send(JSON.stringify({ message }));
+//           }
+//       });
+//       res.status(200).json({ success: true });
+//   } catch (error) {
+//       console.error('Error storing message:', error);
+//       res.status(500).json({ error: 'Failed to store message' });
+//   }
+// });
+
 // app.get('/api/messages', async (req, res) => {
 //   try {
-//       const messages = await DB.getMessages(); // Call your function to get messages from the database
-//       res.json(messages);
+//       const messages = await DB.collection('messages').find({}).toArray();
+//       res.json(messages.map(msg => msg.message));
 //   } catch (error) {
 //       console.error('Error fetching messages from database:', error);
 //       res.status(500).json({ error: 'Failed to fetch messages' });

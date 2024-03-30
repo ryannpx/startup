@@ -104,13 +104,21 @@ function storeMessageLocally(message) {
 }
 
 function sendMessageToServer(message) {
-    console.log('Sending message to server:', message); // Debugging
-
-    if (webSocket && webSocket.readyState === WebSocket.OPEN) {
-        webSocket.send(message);
-    } else {
-        console.error('WebSocket connection not open.');
-    }
+    fetch('/api/messages', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to send message');
+        }
+    })
+    .catch(error => {
+        console.error('Error sending message:', error);
+    });
 }
 
 document.getElementById('sendButton').addEventListener('click', function() {

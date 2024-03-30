@@ -8,6 +8,7 @@ const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('user');
 const taskCollection = db.collection('usertasks');
+const messageCollection = db.collection('messages');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -66,6 +67,29 @@ async function getTasksForUser(username) {
         throw error; // Throw the error for handling in the calling function
     }
 }
+// Function to store a message in the database
+async function storeMessage(message) {
+  try {
+    const result = await db.collection('messages').insertOne({ message });
+    console.log('Message stored in database:', message);
+    return result.insertedId; // Return the ID of the inserted message
+  } catch (error) {
+    console.error('Error storing message in database:', error);
+    throw error;
+  }
+}
+
+// Function to retrieve all messages from the database
+async function getAllMessages() {
+  try {
+    const messages = await db.collection('messages').find({}).toArray();
+    console.log('Retrieved messages from database:', messages);
+    return messages;
+  } catch (error) {
+    console.error('Error retrieving messages from database:', error);
+    throw error;
+  }
+}
 
 
 
@@ -75,6 +99,8 @@ module.exports = {
   createUser,
   saveTasksForUser,
   getTasksForUser,
+  storeMessage,
+  getAllMessages,
 };
 
 
