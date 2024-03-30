@@ -170,7 +170,15 @@ app.get('/tasks', async (req, res) => {
 //         console.log('WebSocket connection closed');
 //     });
 // });
-
+// app.get('/api/messages', async (req, res) => {
+//   try {
+//       const messages = await DB.getMessages(); // Call your function to get messages from the database
+//       res.json(messages);
+//   } catch (error) {
+//       console.error('Error fetching messages from database:', error);
+//       res.status(500).json({ error: 'Failed to fetch messages' });
+//   }
+// });
 
 
 // Default error handler
