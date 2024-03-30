@@ -5,6 +5,7 @@ const http = require('http'); // Import the HTTP module
 const WebSocket = require('ws'); // Import the WebSocket module
 const app = express();
 const DB = require('./database.js');
+const {peerProxy} = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -143,32 +144,32 @@ app.get('/tasks', async (req, res) => {
 
 
 // Create HTTP server using Express app
-const server = http.createServer(app);
+//const server = http.createServer(app);
 
-// WebSocket server setup
-const wss = new WebSocket.Server({ server });
+// // WebSocket server setup
+// const wss = new WebSocket.Server({ server });
 
-// WebSocket connection handler
-wss.on('connection', function connection(ws) {
-    console.log('WebSocket connection established');
+// // WebSocket connection handler
+// wss.on('connection', function connection(ws) {
+//     console.log('WebSocket connection established');
 
-    // Event listener for receiving messages from clients
-    ws.on('message', function incoming(message) {
-        console.log('Received:', message);
+//     // Event listener for receiving messages from clients
+//     ws.on('message', function incoming(message) {
+//         console.log('Received:', message);
         
-        // Broadcast the message to all connected clients
-        wss.clients.forEach(function each(client) {
-            if (client !== ws && client.readyState === WebSocket.OPEN) {
-                client.send(message);
-            }
-        });
-    });
+//         // Broadcast the message to all connected clients
+//         wss.clients.forEach(function each(client) {
+//             if (client !== ws && client.readyState === WebSocket.OPEN) {
+//                 client.send(message);
+//             }
+//         });
+//     });
 
-    // Event listener for WebSocket disconnection
-    ws.on('close', function close() {
-        console.log('WebSocket connection closed');
-    });
-});
+//     // Event listener for WebSocket disconnection
+//     ws.on('close', function close() {
+//         console.log('WebSocket connection closed');
+//     });
+// });
 
 
 
@@ -196,10 +197,10 @@ function setAuthCookie(res, authToken) {
 
 // Start the server
 const port = 4000;
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
-
+peerProxy(httpService);
 module.exports = app;
 
 

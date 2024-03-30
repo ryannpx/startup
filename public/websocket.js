@@ -1,19 +1,43 @@
+let webSocket;
 
 
+function constructor() {
+    configureWebSocket(); // added
+}
 // Establish WebSocket connection
-const socket = new WebSocket('ws://localhost:3000');
+//const socket = new WebSocket('ws://localhost:3000');
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss'; // added 
+    console.log('Websocket Configured');
+    webSocket = new WebSocket(`${protocol}://${window.location.host}/ws`); // added 
+    
+    // webSocket.onopen = (event) => {
+    //    displayStoredMessages('system', 'game', 'connected'); // when someone connects
+    //   };
+    // webSocket.onclose = (event) => {
+    //     displayMsg('system', 'game', 'disconnected'); // when someone disconnects
+    //   };
+    webSocket.onmessage = async (event) => {
+        const msg = JSON.parse(await event.data.text());
+        // if (msg.type === GameEndEvent) {
+        //   this.displayMsg('player', msg.from, `scored ${msg.value.score}`);
+        // } else if (msg.type === GameStartEvent) {
+        //   this.displayMsg('player', msg.from, `started a new game`);
+        // }
+      };
+    
+};
+// // Event listener for WebSocket open
+// socket.addEventListener('open', function (event) {
+//     console.log('WebSocket connection established');
+// });
 
-// Event listener for WebSocket open
-socket.addEventListener('open', function (event) {
-    console.log('WebSocket connection established');
-});
-
-// Event listener for WebSocket messages
-socket.addEventListener('message', function (event) {
-    const message = event.data;
-    storeMessageLocally(message); // Store the received message locally
-    displayMessage(message); // Display the received message
-});
+// // Event listener for WebSocket messages
+// socket.addEventListener('message', function (event) {
+//     const message = event.data;
+//     storeMessageLocally(message); // Store the received message locally
+//     displayMessage(message); // Display the received message
+// });
 
 // Function to store a new message locally
 function storeMessageLocally(message) {
@@ -25,7 +49,7 @@ function storeMessageLocally(message) {
 // Function to send message to server
 function sendMessageToServer(message) {
     if (message !== '') {
-        socket.send(message);
+        webSocket.send(message);
     }
 }
 
@@ -80,8 +104,8 @@ function displayStoredMessages() {
     }
 }
 
-
 // Display stored messages when the page loads
 document.addEventListener('DOMContentLoaded', displayStoredMessages);
+
 
 
