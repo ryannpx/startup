@@ -102,7 +102,7 @@ function updateTimer() {
 
 document.getElementById('startButton').addEventListener('click', startTimer);
 document.getElementById('pauseButton').addEventListener('click', pauseTimer);
-document.getElementById('startBreakButton').addEventListener('click', startBreak);
+//document.getElementById('startBreakButton').addEventListener('click', startBreak);
 
 function startTimer() {
     if (!isRunning) {
@@ -129,7 +129,7 @@ function startBreak() {
     isRunning = false;
     document.getElementById('startButton').style.display = 'inline-block';
     document.getElementById('pauseButton').style.display = 'none';
-    document.getElementById('startBreakButton').style.display = 'none';
+    //document.getElementById('startBreakButton').style.display = 'none';
     // Stop sound if it's playing
     stopSound();
 }

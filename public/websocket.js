@@ -1,16 +1,16 @@
 let webSocket;
+let configure = false;
 
 
-function constructor() {
-    configureWebSocket(); // added
-}
 // Establish WebSocket connection
 //const socket = new WebSocket('ws://localhost:3000');
 function configureWebSocket() {
+    if (!configure ){
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss'; // added 
     console.log('Websocket Configured');
     webSocket = new WebSocket(`${protocol}://${window.location.host}/ws`); // added 
-    
+    configure = true;
+}
     // webSocket.onopen = (event) => {
     //    displayStoredMessages('system', 'game', 'connected'); // when someone connects
     //   };
@@ -47,9 +47,16 @@ function storeMessageLocally(message) {
 }
 
 // Function to send message to server
+// function sendMessageToServer(message) {
+//     if (message !== '') {
+//         webSocket.send(message);
+//     }
+// }
 function sendMessageToServer(message) {
-    if (message !== '') {
+    if (webSocket && webSocket.readyState === WebSocket.OPEN) {
         webSocket.send(message);
+    } else {
+        console.error('WebSocket connection not open.');
     }
 }
 
@@ -103,9 +110,11 @@ function displayStoredMessages() {
         websocketPlaceholder.appendChild(messageElement);
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    configureWebSocket(); // This line is sufficient, no need to call it again outside of the event listener
+    displayStoredMessages();
+});
 
-// Display stored messages when the page loads
-document.addEventListener('DOMContentLoaded', displayStoredMessages);
 
 
 

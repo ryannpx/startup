@@ -1,11 +1,11 @@
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const express = require('express');
-const http = require('http'); // Import the HTTP module
-const WebSocket = require('ws'); // Import the WebSocket module
+//const http = require('http'); // Import the HTTP module
+//const WebSocket = require('ws'); // Import the WebSocket module
 const app = express();
 const DB = require('./database.js');
-const {peerProxy} = require('./peerProxy.js');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
