@@ -44,36 +44,33 @@ function storeMessageLocally(message) {
     const storedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
     storedMessages.push(message);
     localStorage.setItem('chatMessages', JSON.stringify(storedMessages));
+    
 }
 
 // Function to send message to server
-// function sendMessageToServer(message) {
-//     if (message !== '') {
-//         webSocket.send(message);
-//     }
-// }
 function sendMessageToServer(message) {
     if (webSocket && webSocket.readyState === WebSocket.OPEN) {
         webSocket.send(message);
-        displayMessage(message); // Call displayMessage after sending the message
-
     } else {
         console.error('WebSocket connection not open.');
     }
 }
 
 // Event listener for the send button
+// Event listener for the send button
 document.getElementById('sendButton').addEventListener('click', function() {
     const messageInput = document.getElementById('message-input').value.trim();
     // const username = "User"; // Replace "User" with actual user's name
     const fullMessage = `${username}: ${messageInput}`;
     sendMessageToServer(fullMessage); // Send message to server
+    displayMessage(fullMessage); // Display message locally
     document.getElementById('message-input').value = ''; // Clear input field
 });
 
+
 // Event listener for pressing Enter key in the input field
 document.getElementById('message-input').addEventListener('keypress', function(event) {
-    if (event.keyCode === 13) {
+    if (event.key === 'Enter') { // Use event.key for modern browsers
         event.preventDefault();
         document.getElementById('sendButton').click(); // Trigger click event on send button
     }
@@ -93,8 +90,10 @@ function displayMessage(message) {
     const messageElement = document.createElement('p');
     messageElement.textContent = message;
     websocketPlaceholder.appendChild(messageElement);
-}
 
+    // Store the message locally
+    storeMessageLocally(message);
+}
 
 // Function to retrieve messages from local storage and display the last four messages
 function displayStoredMessages() {
