@@ -96,3 +96,4 @@ For this deliverable I made a chatbox with websocket!
 - Users can chat back and forth with one another
 - Added endpoints for the websocket
 - Fixed some spacing issues on the chatbox
+- Working on database connecction 
