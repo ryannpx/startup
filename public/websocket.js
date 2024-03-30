@@ -64,6 +64,7 @@ document.getElementById('sendButton').addEventListener('click', function() {
     const fullMessage = `${username}: ${messageInput}`;
     sendMessageToServer(fullMessage); // Send message to server
     displayMessage(fullMessage); // Display message locally
+    displayStoredMessages(fullMessage);
     document.getElementById('message-input').value = ''; // Clear input field
 });
 
