@@ -1,0 +1,103 @@
+/* Custom styles for the header */
+.custom-header {
+    background-color: #faf6f66e !important; /* Cream background color */
+}
+
+
+
+.section {
+    margin-bottom: 10px !important; /* Height of the footer */
+     /* Add some padding at the bottom to create space between content and footer */
+}
+
+/* Additional styles as needed */
+
+
+.content-wrapper {
+    margin-bottom: 50px; /* Height of the footer */
+    z-index: 1; /* Ensure the main content stays behind the footer */
+}
+
+
+
+/* body {
+    background-image: linear-gradient(to right, #ff94a9c9, #faf6f6d1);
+    background-size: 200% auto;
+    animation: gradientAnimation 10s ease infinite;
+} */
+
+
+/* CSS for the sticky footer */
+html {
+    position: relative;
+    min-height: 100%;
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+body {
+    margin: 0;
+   
+    background-image: linear-gradient(to right, #ffc4d0, #faf6f6d1);
+    background-size: 200% auto;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.info-container {
+    background-color: #faf6f6a0 !important; /* Brown background color faf6f6d1 */
+    color: black; /* Text color */
+    border-color: #8b4513; /* Border color */
+    width: 1500px; /* Adjusted width */
+    max-width: 100%; /* Maximum width */
+    margin: 0 auto; /* Center horizontally */
+}
+
+
+
+/* Custom styles for the footer */
+.custom-footer {
+    background-color: #faf6f632 !important; /* Cream background color */
+    height: 50px !important;
+    color: #ffffffd0 !important; /* White text color */
+    font-size: 20px;
+}
+.github{
+    background-color: rgba(255, 255, 255, 0.563);
+    
+    
+}
+
+#navbar-logo {
+    max-width: none; /* Remove the maximum width constraint */
+    height: auto; /* Ensure the height adjusts according to the width */
+}
+.custom-header .navbar-item {
+    color: #494949d0 !important; /* White text color */
+    font-size: 20px;
+}
+.custom-header .navbar-item:hover {
+    color: #494949d0 !important; /* Red text color on hover */
+background-color: rgba(255, 255, 255, 0.752)  !important; /* White background color on hover */
+}
+
+.custom-header .navbar-burger {
+    color: #717171d0 !important; /* White color for burger lines */
+}
+
+.custom-header .navbar-burger:hover {
+    color: #606060 !important; /* White color for burger lines on hover */
+}
+
+
+
+.custom-header .navbar-menu {
+    background-color: #ffffff00 !important; /* Pink background color for the dropdown */
+}

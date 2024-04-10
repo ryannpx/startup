@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poro Study!</title>
+    <!-- Link to Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- Link to custom CSS file -->
+    <link rel="stylesheet" href="homestyle.css">
+    <script src="websocket.js" type="module"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="pomo study.png" type="image/x-icon" width="2000">
+
+
+
+   
+</head>
+<body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+
+    <nav class="navbar is-light custom-header" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <img id="navbar-logo" src="whitecat1.png" >
+            </a>
+            
+    
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="index.html" class="navbar-item">Login</a>
+                <a href="home.html" class="navbar-item">Home</a>
+                <a href="info.html" class="navbar-item">Info</a>
+            </div>
+            <div id="logoutLink" class="navbar-end" style="display: none;">
+                <a href="#" class="navbar-item" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <button id="gifButton" class="button gif">Change Background</button>
+   
+
+    
+    <main>
+        <!-- Your main content here -->
+        <!-- <div class="container custom-container">
+            <div class="countdown digital-clock" id="countdown">
+                25:00
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <button id="startButton" class="button custom-button">Start</button>
+            <button id="pauseButton" class="button other-button">Pause</button>
+        </div> -->
+        <div id="usernameDisplay" class="has-text-centered">
+            <!-- The user's name will be inserted dynamically here -->
+        </div>
+        <div class="container custom-container">
+            <div class="countdown digital-clock" id="countdown">
+                25:00
+            </div>
+            <div class="button-container">
+                <button id="startButton" class="button custom-button">Start</button>
+                <button id="pauseButton" class="button other-button">Pause</button>
+            </div>
+        </div>
+        
+        
+
+       
+    <!-- <script>
+        // Import functions from timer module
+        import { startTimer, pauseTimer } from './timer.js';
+
+        // Event listeners for start and pause buttons
+        document.getElementById('startButton').addEventListener('click', startTimer);
+        document.getElementById('pauseButton').addEventListener('click', pauseTimer);
+    </script> -->
+
+        <div class="container websocket-container">
+            <div id="websocket-placeholder" class="websocket-placeholder">
+                <!-- Messages will be displayed here -->
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <input id="message-input" class="input" type="text" placeholder="Type your message...">
+                </div>
+                <div class="control">
+                    <button id="sendButton" class="button chat-button">Send</button>
+                </div>
+            </div>
+        </div>
+        
+
+        
+
+        
+        <div class="youtube-container">
+            <div class="youtube" id="youtube"> 
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3WLDIcG4Cx2UOPy0rbFhQn?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>            </div>
+        </div>
+        
+
+
+        
+        <div class="cat-container">
+            <div class="cat">
+                <img id="cat-image" src="Untitled_Artwork (3).png" alt="cat image for login screen" width="200">
+                <div class="motivation"> <!-- Add the "motivation" class here -->
+                    <p></p> <!-- No initial static text -->
+                </div>
+                <p>Click cat for study motivation!</p>
+            </div>
+        </div>
+        
+           
+        
+
+        <!-- <h2>To-Do List</h2> -->
+    
+        <div class="parent-container">
+            <div class="container todo-container">
+                <form id="todo-form">
+                    <label for="task">Add Task:</label>
+                    <input type="text" id="task" name="task" required>
+                    <button id="addButton" class="button add-button">Add</button>
+                </form>
+                <ul id="todo-list" style="list-style-type: none;">
+                    <!-- Tasks will be dynamically added here -->
+                </ul>
+                <button id="clearButton" class="button clear-button">Clear Tasks</button>
+            </div>
+        </div>
+        
+      
+    </main>
+
+    <footer class="footer custom-footer">
+        <div class="content has-text-centered">
+            <p class="is-centered"> <!-- Center the button -->
+                <a href="https://github.com/ryannpx" target="_blank" class="button github"> <!-- Added is-medium for larger button -->
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>GitHub</span>
+                </a>
+            </p>
+        </div>
+    </footer>
+    <script src="burger.js"></script>
+    <script src="username.js"></script>
+    <script src="timer.js"></script> 
+    <!-- <script src="timer.js" type="module"></script>    -->
+    <script src="cat.js"></script>
+    <script src="todo.js"></script>
+    <script src="gif.js"></script>
+    <script src="index.js"></script> 
+    <script src="login.js"></script>
+ 
+    
+</body>
+</html>
