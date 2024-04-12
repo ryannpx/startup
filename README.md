@@ -98,3 +98,7 @@ For this deliverable I made a chatbox with websocket!
 - Fixed some spacing issues on the chatbox
 - Working on database connecction
 - It sends it over websocket, database is being worked on to store and keep it there. But the websocket is connected and sends information
+  # React Deliverable
+For this deliverable I bundled my website with Vite
+- bundled website with Vite
+- Can run and debug frontend and backend with Vite
