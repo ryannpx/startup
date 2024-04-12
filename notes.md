@@ -96,7 +96,10 @@ html
 - token for user, random string stored in database uuid (const uuid = require('uuid')
 - cookies: things that happened previous sessions with the client
 
-3/20
+4/3
+- react
+- propxerties to components
+- - states to componants
 
 
 
