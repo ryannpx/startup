@@ -1,19 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <link rel="icon" href="/favicon.ico"/>
-        <meta name="'viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="theme-color" content="#000000"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Link to Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- Link to custom CSS file -->
+    <link rel="stylesheet" href="styling.css">
+    <script src="index.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bulma@0.9.3/dist/js/bulma.min.js"></script>
+    <link rel="icon" href="pomo study.png" type="image/x-icon" width="2000">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-        <title>Poro Study</title>
+</head>
+<body>
 
-    </head>
+    <nav class="navbar is-light custom-header" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <img id="navbar-logo" src="pomo study.png" >
+            </a>
+            
+    
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="index.html" class="navbar-item">Login</a>
+                <a id="homeLink" class="navbar-item">Home</a>
+                <a href="info.html" class="navbar-item">Info</a>
+            </div>
 
-    <body>
-        <noscript>You need to enable Javascript to run this app.</noscript>
-        <div id="root"></div>
-        <script type="module" src="/index.jsx"></script>
-    </body>
+            <div id="logoutLink" class="navbar-end" style="display: none;">
+                <a href="#" class="navbar-item" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if the user is authenticated (example: check if there's a token in localStorage)
+            const isAuthenticated = localStorage.getItem('token') !== null;
 
+            // Get the home link element
+            const homeLink = document.getElementById('homeLink');
+
+            // If the user is authenticated, set the href attribute to the home page, else to the login page
+            homeLink.href = isAuthenticated ? 'home.html' : 'index.html';
+        });
+
+        // // Function to logout (example function)
+        // function logout() {
+        //     // Implement logout logic here (e.g., remove token from localStorage)
+        //     localStorage.removeItem('token');
+        //     // Redirect the user to the login page or perform any other necessary actions
+        //     window.location.href = 'index.html';
+        // }
+    </script>
+    <div id="navbarUsername" class="navbar-end">
+        <!-- The user's name will be inserted dynamically here -->
+    </div>
+<!-- <section class="section">
+    <div class="container">
+        <label for="themeselector">Choose a color theme!</label>
+        <input type="color" name="varColor" id="color" value="#FF0000">
+    </div>
+</section> -->
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <!-- Added custom styling for the login container -->
+                <div class="login-container box">
+                    <div class="image-container has-text-centered">
+                        <img src="final_logo.png" alt="cat image for login screen" width="200">
+                    </div>
+
+                    <div class="has-text-centered"> <!-- Added has-text-centered class -->
+                        <p class="subtitle">Ready to start studying? Please login below:</p>
+                        
+                        <form action="" class="login-form" method = post>
+                            <!-- Your login form -->
+                            <div class="field">
+                                <label for="username" class="label">Username:</label>
+                                <div class="control">
+                                    <input type="text" id="username" name="username" class="input" style="text-align: left;" required>
+                                    <!-- Inline style applied to align text to left -->
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="password" class="label">Password:</label>
+                                <div class="control">
+                                    <input type="password" id="password" name="password" class="input" style="text-align: left;" required>
+                                    <!-- Inline style applied to align text to left -->
+                                    
+                                </div>
+                            </div>
+                            <div id="error-message" class="has-text-danger"></div>
+                            <div class="field is-grouped is-grouped-centered">
+                                <div class="control">
+                                    
+                                    <button type="button" class="button custom-button" onclick="loginUser()">Login</button>
+                                    <button type="button" class="button custom-button" onclick="createUser()">Create</button>
+                                    
+                                    <!-- <button type="submit" class="button custom-button">Create</button> -->
+                                    <!-- Added custom-button class for custom styling -->
+                                </div>
+                            </div>
+                        </form>
+                        <!-- <p>Don't have an account? <a href = "signup.html" >Signup</a></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer custom-footer">
+    <div class="content has-text-centered">
+        <p class="is-centered"> <!-- Center the button -->
+            <a href="https://github.com/ryannpx" target="_blank" class="button github"> <!-- Added is-medium for larger button -->
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+            </a>
+        </p>
+    </div>
+</footer>
+<script src="burger.js"></script>
+<script src="login.js"></script>
+<script src="home.js"></script>
+
+</body>
 </html>
